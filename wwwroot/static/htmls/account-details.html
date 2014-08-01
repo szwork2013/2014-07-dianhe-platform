@@ -13,7 +13,7 @@
 <footer></footer>
 <aside></aside>
 <script id="script-loading-html-snippets-0">
-	$(document.body.querySelector('header')).load('snippets/header-account.html');
+	$(document.body.querySelector('header')).load('snippets/header-default.html');
 	$(document.body.querySelector('footer')).load('snippets/footer-default.html');
 	$(document.body.querySelector('aside')).load('snippets/sidebar-default.html');
 </script>
@@ -21,15 +21,9 @@
 <div class="page-strip chief-content">
 	<div class="page-wrap">
 		<header>
-			<h1>我的应用</h1>
+			<h1>账户明细</h1>
 
-			<aside class="left">
-				<nav class="links-group horizontal has-dividers align-left">
-					<ul>
-						<li>充值<a href="#"></a></li>
-					</ul>
-				</nav>
-			</aside>
+			<aside class="left"></aside>
 
 			<aside class="right">
 				<nav class="links-group horizontal has-dividers align-right">
@@ -47,18 +41,18 @@
 				<form id="some-form-untitled">
 
 					<div class="row no-hover">
-						<aside class="col-1">账户余额</aside>
-						<aside class="col-2">29元</aside>
+						<aside class="col-1"><label>账户余额</label></aside>
+						<aside class="col-2"><label>29元</label></aside>
 					</div>
 
 					<div class="row required show-hint">
-						<aside class="col-1">充值余额</aside>
+						<aside class="col-1"><label for="account-balance">充值余额</label></aside>
 						<aside class="col-2">
 							<input required type="text" name="account-balance" id="account-balance" value="" /><label for="account-balance">元</label>
 						</aside>
 					</div>
 
-					<div class="row no-padding-bottom">
+					<div class="row">
 						<aside class="col-1"><label for="send-me-receipt">发票</label></aside>
 						<aside class="col-2">
 							<input type="checkbox" name="send-me-receipt" id="send-me-receipt" value="" /><label for="send-me-receipt">需要</label>
@@ -70,7 +64,7 @@
 						<aside class="col-2">
 							<fieldset>
 								<div class="row">
-									<aside class="col-1">发票抬头</aside>
+									<aside class="col-1"><label>发票抬头</label></aside>
 									<aside class="col-2">
 										<select id="receipt-type" style="width: 70px;">
 											<option>个人</option>
@@ -118,7 +112,7 @@
 						</aside>
 					</div>
 
-					<div class="row buttons-section no-hover">
+					<div class="row buttons-section">
 						<aside class="col-1"></aside>
 						<aside class="col-2">
 							<button>提交</button>
