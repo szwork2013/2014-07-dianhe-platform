@@ -42,113 +42,91 @@
 			</aside>
 		</header>
 
-		<section class="single-line-info-bar">
-			<aside class="left info-ok">第一步：基本信息</aside>
-			<aside class="left op-steps-arrow"></aside>
-			<aside class="left info-dimmed">第二步：应用内容</aside>
-			<aside class="left op-steps-arrow dimmed"></aside>
-			<aside class="left info-dimmed">第三步：应用分布</aside>
-		</section>
-
 		<section>
-			
 			<div class="section-body">
 				<form id="some-form-untitled">
 
+					<div class="row no-hover">
+						<aside class="col-1">账户余额</aside>
+						<aside class="col-2">29元</aside>
+					</div>
+
+					<div class="row required show-hint">
+						<aside class="col-1">充值余额</aside>
+						<aside class="col-2">
+							<input required type="text" name="account-balance" id="account-balance" value="" /><label for="account-balance">元</label>
+						</aside>
+					</div>
+
+					<div class="row no-padding-bottom">
+						<aside class="col-1"><label for="send-me-receipt">发票</label></aside>
+						<aside class="col-2">
+							<input type="checkbox" name="send-me-receipt" id="send-me-receipt" value="" /><label for="send-me-receipt">需要</label>
+						</aside>
+					</div>
+
+					<div class="row no-hover">
+						<aside class="col-1"></aside>
+						<aside class="col-2">
+							<fieldset>
+								<div class="row">
+									<aside class="col-1">发票抬头</aside>
+									<aside class="col-2">
+										<select id="receipt-type" style="width: 70px;">
+											<option>个人</option>
+											<option>单位</option>
+										</select>
+										<input type="text" name="receipt-title" id="receipt-title" placeholder="发票抬头" value="" />
+									</aside>
+								</div>
+
+								<div class="row">
+									<aside class="col-1"><label for="post-address">邮寄地址</label></aside>
+									<aside class="col-2">
+										<input type="text" name="post-address" id="post-address" placeholder="邮寄地址" value="" />
+									</aside>
+								</div>
+
+								<div class="row">
+									<aside class="col-1"><label for="zip-code">邮编</label></aside>
+									<aside class="col-2">
+										<input type="text" name="zip-code" id="zip-code" placeholder="邮编" value="" />
+									</aside>
+								</div>
+
+								<div class="row">
+									<aside class="col-1"><label for="contact-person">联系人</label></aside>
+									<aside class="col-2">
+										<input type="text" name="contact-person" id="contact-person" placeholder="联系人" value="" />
+									</aside>
+								</div>
+
+								<div class="row">
+									<aside class="col-1"><label for="contact-person-phone">联系电话</label></aside>
+									<aside class="col-2">
+										<input type="text" name="contact-person-phone" id="contact-person-phone" placeholder="联系电话" value="" />
+									</aside>
+								</div>
+							</fieldset>
+						</aside>
+					</div>
+
 					<div class="row">
-						<aside class="col-1">类别</aside>
-						<aside class="col-2">手机应用</aside>
-					</div>
-
-					<div class="row required show-hint">
-						<aside class="col-1">平台分类</aside>
+						<aside class="col-1"><label for="recharge-desc">充值说明</label></aside>
 						<aside class="col-2">
-							<input required type="radio" name="app-platform" id="app-platform-android" value="android" /><label for="app-platform-android">Android</label>
-							<input required type="radio" name="app-platform" id="app-platform-ios" value="ios" /><label for="app-platform-ios">iOS</label>
-							<p class="desc">目前平台仅接受Android和iOS平台应用</p>
-						</aside>
-					</div>
-
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-name">应用名称</label></aside>
-						<aside class="col-2">
-							<input required type="text" name="app-name" id="app-name" value="" />
-							<p class="desc">不超过15个中文字符或30个英文字符</p>
-						</aside>
-					</div>
-
-					<div class="row required show-hint">
-						<aside class="col-1">应用类别</aside>
-						<aside class="col-2">
-							<select required id="app-category-level-1">
-								<option>系统输入</option>
-							</select>
-
-							<select required id="app-category-level-2">
-								<option>二级分类</option>
-							</select>
-						</aside>
-					</div>
-
-					<div class="row">
-						<aside class="col-1"><label for="app-keywords">搜索标签</label></aside>
-						<aside class="col-2">
-							<input type="text" name="app-keywords" id="app-keywords" value="" />
-							<p class="desc">应用涉及的关键字，便于用户搜索，多个输入请以空格分隔</p>
-						</aside>
-					</div>
-
-					<div class="row">
-						<aside class="col-1">版权证明</aside>
-						<aside class="col-2">
-							<button class="gray">本地上传</button>
-							<img class="thumbnail" src="../images/_common/symbol-file-uploading-placeholder.png" />
-							<a href="">删除</a>
-							<p class="desc">可上传软件著作权证明、授权证明、版权声明文件或其他证明。<br />
-							附件格式如果为JPG、PNG文件，其大小不能超过1MB。<br />
-							如果有多个文件，请打包为RAR、ZIP格式上传，文件大小不能超过10MB。</p>
-						</aside>
-					</div>
-
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-language">应用语言</label></aside>
-						<aside class="col-2">
-							<select required id="app-language">
-								<option>简体中文</option>
-								<option>繁体中文</option>
-								<option>英语</option>
-							</select>
-						</aside>
-					</div>
-
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-cost">应用资费</label></aside>
-						<aside class="col-2">
-							<select required id="app-cost">
-								<option>功能付费</option>
-							</select>
-						</aside>
-					</div>
-
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-intro">应用介绍</label></aside>
-						<aside class="col-2">
-							<textarea required id="app-intro" maxlength="1500" placeholder="something. i dont't know."></textarea>
-							<p class="desc">50到1500字，简述应用的作用、使用方法等信息。</p>
+							<textarea id="recharge-desc" maxlength="1500" placeholder="请填写充值说明。限1500字。"></textarea>
 						</aside>
 					</div>
 
 					<div class="row buttons-section no-hover">
 						<aside class="col-1"></aside>
 						<aside class="col-2">
-							<button>下一步</button>
-							<button>保存并结束</button>
+							<button>提交</button>
 						</aside>
 					</div>
 
 				</form>
 			</div>
-
 		</section>
 	</div>
 </div>

@@ -98,7 +98,7 @@
 			margin: 0;
 			padding: 0;
 			border: none;
-			height: 2px;
+			height: 1px;
 		}
 
 		hr.v { /* v means vertical */
@@ -135,7 +135,9 @@
 			input,
 			select,
 			textarea,
+			label,
 			button {
+				display: inline-block;
 				vertical-align: middle;
 			}
 
@@ -148,6 +150,7 @@
 			optgroup,
 			option,
 			textarea,
+			label,
 			button {
 				/*font-size: 0.7499rem;*/
 				font-size: 0.87499rem;
@@ -172,8 +175,9 @@
 
 			input[type=radio],
 			input[type=checkbox] {
-				width: 1.08rem;
-				height: 1.08rem;
+				width: 1rem;
+				height: 1rem;
+				margin-top: 2px;
 			}
 
 			input[type=color] {
@@ -198,7 +202,11 @@
 				line-height: 30px;
 			}
 
-
+			input[type='radio'],
+			input[type='checkbox'],
+			label {
+				line-height: inherit;
+			}
 
 
 			input,
@@ -661,10 +669,26 @@
 
 
 	.chief-content > .page-wrap > header {
+		position: relative;
 		font-size: 1.5rem;
 		margin: 0;
 		height: 2.6rem;
 		border-bottom: 1px solid;
+		}
+
+		.chief-content > .page-wrap > header:after {
+			content: '';
+			position: absolute;
+			box-sizing: border-box;
+			height: 5px;
+			width: 100%;
+			left: 0;
+			top: 100%;
+			margin-top: 1px;
+			border-style: none;
+			border-color: #ddd;
+			border-width: 0 1px;
+			background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, transparent 100% );
 		}
 
 		.chief-content > .page-wrap > header h1 {
@@ -946,6 +970,11 @@
 			line-height: 40px;
 		}
 
+		form .row.no-padding-bottom {
+			margin-top: 10px;
+			padding: 0;
+		}
+
 		form .row:hover input {
 		}
 
@@ -961,7 +990,7 @@
 
 		form .row aside.col-1 {
 			clear: left;
-			width: 300px;
+			width: 250px;
 			min-height: 30px;
 
 			text-align: right;
@@ -969,8 +998,7 @@
 
 		form .row aside.col-2 {
 			clear: right;
-			width: -webkit-calc(100% - 300px - 40px);
-			width: calc(100% - 300px - 40px);
+			width: auto;
 
 			text-align: left;
 		}
@@ -979,6 +1007,9 @@
 
 		form .row aside.col-1:not(:empty):after {
 			content: '：';
+			display: inline-block;
+			line-height: inherit;
+			vertical-align: middle;
 		}
 
 		form .row.required.show-hint aside.col-1:not(:empty),
@@ -1032,4 +1063,21 @@
 			content: none;
 			margin: 0;
 		}
+
+
+
+
+		form .row aside.col-2 fieldset {
+			margin: 0 0 20px 0;
+			width: 620px;
+			outline: 2px solid #3f3030;
+			}
+			form .row aside.col-2 fieldset .row {
+				padding: 3px 0;
+			}
+			form .row aside.col-2 fieldset .row aside.col-1 {
+				width: 80px;
+			}
+			form .row aside.col-2 fieldset .row aside.col-2 {
+			}
 } /* @media only screen */

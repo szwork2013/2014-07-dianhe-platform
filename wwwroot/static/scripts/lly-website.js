@@ -347,6 +347,9 @@ var website = new (function WLCWebsite() {
 			this.addShowButtons = function (elementsArray) { return _addButtonsToArray.call(this, elementsArray, this.options.showButtons); }
 			this.addHideButtons = function (elementsArray) { return _addButtonsToArray.call(this, elementsArray, this.options.hideButtons); }
 			this.addToggleButtons = function (elementsArray) { return _addButtonsToArray.call(this, elementsArray, this.options.toggleButtons); }
+			this.removeShowButtons = function (elementsArray) { return _removeButtonsFromArray.call(this, elementsArray, this.options.showButtons); }
+			this.removeHideButtons = function (elementsArray) { return _removeButtonsFromArray.call(this, elementsArray, this.options.hideButtons); }
+			this.removeToggleButtons = function (elementsArray) { return _removeButtonsFromArray.call(this, elementsArray, this.options.toggleButtons); }
 			this.clearShowButtons = function () { _clearButtonsInArray.call(this, 'showButtons'); }
 			this.clearHideButtons = function () { _clearButtonsInArray.call(this, 'hideButtons'); }
 			this.clearToggleButtons = function () { _clearButtonsInArray.call(this, 'toggleButtons'); }
@@ -504,7 +507,7 @@ var website = new (function WLCWebsite() {
 							w( 'Element already in array "'+elementAlreadyInArrayName+'". Ignored. The element metioned is\n', element);
 						}
 					} else {
-						w( 'Invalid element for a button of a {PopupWindow}. Ignored.' );
+						w( 'Invalid element met when trying to add buttons for '+this.logName+'. Ignored.' );
 						continue;
 					}
 				};
@@ -522,6 +525,35 @@ var website = new (function WLCWebsite() {
 				}
 
 				return addedElements;
+			}
+			function _removeButtonsFromArray(elementOrArrayToAdd, targetArray) {
+				var removedElements = [];
+
+				if ( typeof elementOrArrayToAdd === 'undefined' || elementOrArrayToAdd === null ) {
+					return removedElements;
+				}
+
+				if (Array.isArray(elementOrArrayToAdd)) {
+					var elementsArray = elementOrArrayToAdd;
+				} else {
+					var elementsArray = [].push(elementOrArrayToAdd);
+				}
+				l('_removeButtonsFromArray();');
+
+				for (var i = 0; i < elementsArray.length; i++) {
+					var element = elementsArray[ i ];
+					if ( wlcJS.domTools.isDom(element) ) {
+						if (targetArray===this.options.showButtons) _detachOneShowButton.call(this,element);
+						if (targetArray===this.options.hideButtons) _detachOneHideButton.call(this,element);
+						if (targetArray===this.options.toggleButtons) _detachOneToggleButton.call(this,element);
+						targetArray.del(element);
+						removedElements.push(element);
+					} else {
+						w( 'Invalid element met when trying to remove buttons for '+this.logName+'. Ignored.' );
+						continue;
+					}
+				};
+				return removedElements;
 			}
 
 
@@ -562,19 +594,28 @@ var website = new (function WLCWebsite() {
 
 
 
+			function _detachOneShowButton(showButton) {
+				$(showButton).off('click.showPopupWindow-'+this.rootElement.id);
+			}
+			function _detachOneHideButton(hideButton) {
+				$(hideButton).off('click.hidePopupWindow-'+this.rootElement.id);
+			}
+			function _detachOneToggleButton(toggleButton) {
+				$(toggleButton).off('click.togglePopupWindow-'+this.rootElement.id);
+			}
 			function _detachAllShowButtons() {
 				for (var i = 0; i < this.options.showButtons.length; i++) {
-					$(this.options.showButtons[i]).off('click.showPopupWindow-'+this.rootElement.id);
+					_detachOneShowButton(this.options.showButtons[i]);
 				};
 			}
 			function _detachAllHideButtons() {
 				for (var i = 0; i < this.options.hideButtons.length; i++) {
-					$(this.options.hideButtons[i]).off('click.hidePopupWindow-'+this.rootElement.id);
+					_detachOneHideButton(this.options.hideButtons[i]);
 				};
 			}
 			function _detachAllToggleButtons() {
 				for (var i = 0; i < this.options.toggleButtons.length; i++) {
-					$(this.options.toggleButtons[i]).off('click.togglePopupWindow-'+this.rootElement.id);
+					_detachOneToggleButton(this.options.toggleButtons[i]);
 				};
 			}
 
@@ -605,7 +646,7 @@ var website = new (function WLCWebsite() {
 						minMarginLeft:		this.options.minMarginLeft
 					});
 				}
-				l('this.options.autoHide:', this.options.autoHide, '\nthis.options:', this.options)
+				// l(this.logName+'this.options.autoHide:', this.options.autoHide, '\nthis.options:', this.options)
 				if (this.options.autoHide) {
 					var thisPopupWindow = this;
 					var _duration =

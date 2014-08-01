@@ -360,9 +360,11 @@ var wlcJS = new (function () {
 
 
 			var _ = options || {};
+			// var _defaultRef = document.documentElement;
+			var _defaultRef = window;
 
 			if (!_isDom(_.centerRef) ) {
-				_.centerRef = document.documentElement;
+				_.centerRef = _defaultRef;
 			} else {
 				if (
 					_.centerRef == document.documentElement ||
@@ -370,7 +372,7 @@ var wlcJS = new (function () {
 					_.centerRef == document.body ||
 					_.centerRef == window
 				) {
-					_.centerRef = document.documentElement;
+					_.centerRef = _defaultRef;
 				} else {
 					// do nothing
 				}
@@ -391,7 +393,8 @@ var wlcJS = new (function () {
 
 			if (_.alongX) {
 				var selfWidth = parseInt( computedStyle.width );
-				// l('_.centerRef.clientWidth:',_.centerRef.clientWidth,'px\n','selfWidth:',selfWidth,'px\n','_.offsetX:',_.offsetX,'px\n');
+				var refWidth = _.centerRef === window ? _.centerRef.innerWidth : _.centerRef.clientWidth;
+				// l('refWidth:',refWidth,'px\n','selfWidth:',selfWidth,'px\n','_.offsetX:',_.offsetX,'px\n');
 				var left = undefined;
 
 				if (_.shrinkWhenNeeded) {
@@ -405,7 +408,7 @@ var wlcJS = new (function () {
 						selfWidth = this.computedWidthBeforeCenterTo;
 					}
 
-					var maxAllowedWidth = _.centerRef.clientWidth - _.minMarginLeft - _.minMarginRight - selfPaddingHori - selfBordersHori;
+					var maxAllowedWidth = refWidth - _.minMarginLeft - _.minMarginRight - selfPaddingHori - selfBordersHori;
 
 					if ( selfWidth>maxAllowedWidth ) { // camparing everytime this method being called, in case the container could have changed
 						selfWidth = maxAllowedWidth;
@@ -419,7 +422,7 @@ var wlcJS = new (function () {
 
 					left = (maxAllowedWidth - selfWidth) / 2 + _.minMarginLeft + _.offsetX;
 				} else {
-					left = (_.centerRef.clientWidth - selfWidth) / 2 + _.offsetX;
+					left = (refWidth - selfWidth) / 2 + _.offsetX;
 				}
 
 				this.style.left = left + 'px';
@@ -427,7 +430,8 @@ var wlcJS = new (function () {
 
 			if (_.alongY) {
 				var selfHeight = parseInt( computedStyle.height );
-				// l('_.centerRef.clientHeight:',_.centerRef.clientHeight,'px\n','selfHeight:',selfHeight,'px\n','_.offsetY:',_.offsetY,'px\n');
+				var refHeight = _.centerRef === window ? _.centerRef.innerHeight : _.centerRef.clientHeight;
+				// l('refHeight:',refHeight,'px\n','selfHeight:',selfHeight,'px\n','_.offsetY:',_.offsetY,'px\n');
 				var top = undefined;
 
 				if (_.shrinkWhenNeeded) {
@@ -441,7 +445,7 @@ var wlcJS = new (function () {
 						selfHeight = this.computedHeightBeforeCenterTo;
 					}
 
-					var maxAllowedHeight = _.centerRef.clientHeight - _.minMarginTop - _.minMarginBottom - selfPaddingVert;
+					var maxAllowedHeight = refHeight - _.minMarginTop - _.minMarginBottom - selfPaddingVert;
 
 					if ( selfHeight>maxAllowedHeight ) { // camparing everytime this method being called, in case the container could have changed
 						selfHeight = maxAllowedHeight;
@@ -455,7 +459,7 @@ var wlcJS = new (function () {
 
 					top = (maxAllowedHeight - selfHeight) / 2 + _.minMarginTop + _.offsetY;
 				} else {
-					top = (_.centerRef.clientHeight - selfHeight) / 2 + _.offsetY;
+					top = (refHeight - selfHeight) / 2 + _.offsetY;
 				}
 				this.style.top = top + 'px';
 			}
