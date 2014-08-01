@@ -317,6 +317,8 @@ body > aside .icons-list > li:hover {
 
 	.chief-content > .page-wrap > header h1 {
 		color: #4a5863;
+		color: black;
+		text-shadow: 2px 2px 8px rgba(0,0,0,0.2), 2px 2px 2px rgba(0,0,0,0.2);
 	}
 
 
@@ -348,31 +350,38 @@ body > aside .icons-list > li:hover {
 	.links-group,
 	.links-group ul li a,
 	.links-group ul li a:link {
-		color: #6a6a6a;
+		color: #999;
 	}
 
 	.links-group ul li a:visited {
-		color: #6a6a6a;
+		color: #999;
 	}
 
+	.links-group ul li:hover,
+	.links-group ul li:active,
+	.links-group ul li:hover a,
+	.links-group ul li:active a,
 	.links-group ul li a:hover,
 	.links-group ul li a:active {
 		color: black;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 	}
 
-	.links-group ul li.high-light,
-	.links-group ul li.high-light a,
+	.links-group ul li.current,
 	.links-group ul li.current a,
 	.links-group ul li.current a:link {
-		color: #372f2d;
+		color: #444;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	}
 
-	.links-group ul li.high-light:hover,
-	.links-group ul li.high-light a:hover,
-	.links-group ul li.high-light a:active,
+	.links-group ul li.current:hover,
+	.links-group ul li.current:active,
+	.links-group ul li.current:hover a,
+	.links-group ul li.current:active a,
 	.links-group ul li.current a:hover,
 	.links-group ul li.current a:active {
-		color: #8c8886;
+		color: black;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 	}
 
 

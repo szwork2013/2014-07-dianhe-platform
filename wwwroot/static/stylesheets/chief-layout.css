@@ -664,7 +664,7 @@
 		font-size: 1.5rem;
 		margin: 0;
 		height: 2.6rem;
-		border-bottom: 2px solid;
+		border-bottom: 1px solid;
 		}
 
 		.chief-content > .page-wrap > header h1 {
@@ -724,7 +724,6 @@
 		.links-group,
 		.links-group ul li a,
 		.links-group ul li a:link {
-			color: #6a6a6a;
 		}
 
 
