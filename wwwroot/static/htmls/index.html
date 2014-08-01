@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN" class="page-index">
+<head>
+	<meta charset="utf-8">
+	<title>联连应用开放平台</title>
+	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
+	<script src="../scripts/jquery-1.11.1.min.js"></script>
+	<style>
+		body {
+			background-color: white;
+		}
+
+		.splash-image {
+			background-repeat: no-repeat;
+			background-position: left top;
+			background-image: url(../images/page-index/index-splash.jpg);
+			min-height: 550px;
+		}
+		.signup-signin {
+			width: 298px;
+			position: absolute;
+			right: 0;
+			top: 80px;
+			border: 1px solid #e4e4e4;
+			background-color: #f5f5f5;
+		}
+
+
+		.signup-signin form {
+			margin: 24px 0;
+		}
+
+		.signup-signin form#form-signup {
+			min-height: 40px;
+		}
+
+		.signup-signin form fieldset {
+		}
+
+		.signup-signin form fieldset legend {
+			font-size: 1.25rem;
+			line-height: 1em;
+			color: #4f88cd;
+			margin: 0 0 16px 24px;
+			padding: 0;
+			font-weight: bold;
+		}
+
+
+		.signup-signin form input,
+		.signup-signin form button,
+		.signup-signin #dianhe-verifier-sample {
+			float: left;
+			margin: 0 0 16px 24px;
+		}
+
+		.signup-signin form a {
+			float: right;
+			line-height: 1em;
+			margin: 0 24px 8px 0;
+		}
+
+		.signup-signin form input,
+		.signup-signin form button {
+			width: 250px;
+			height: 40px;
+		}
+
+		.signup-signin input#dianhe-verifier {
+			width: 121px;
+			margin-right: 0;
+		}
+
+		.signup-signin #dianhe-verifier-sample {
+			width: 121px;
+			float: right;
+			margin-left: 0;
+			margin-right: 24px;
+		}
+
+
+
+
+		.signup-signin input {
+			color: #373033;
+			border-color: #4f88cd;
+			background-color: white;
+		}
+
+		.signup-signin input:hover,
+		.signup-signin input:focus,
+		.signup-signin input:active {
+			border-color: #373033 !important;
+		}
+
+		.signup-signin a {
+			color: #4f88cd;
+		}
+
+	</style>
+</head>
+
+<body>
+<header></header>
+<footer></footer>
+<script id="script-loading-html-snippets-0">
+	$(document.body.querySelector('header')).load('snippets/header-_index.html');
+	$(document.body.querySelector('footer')).load('snippets/footer-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap splash-image">
+		<aside class="signup-signin">
+			<form id="form-signin">
+				<fieldset>
+					<legend>登录点合</legend>
+
+					<input required type="email"	name="dianhe-user-name" id="dianhe-user-name"	placeholder="邮箱"	value="" />
+					<input required type="password" name="dianhe-password"	id="dianhe-password"	placeholder="密码"	value="" />
+
+					<input required type="text"		name="dianhe-verifier"	id="dianhe-verifier"	placeholder="右侧验证码"	value="" />
+					<img id="dianhe-verifier-sample" src="../images/_temp/default-verifier-sample.png" />
+
+					<button id="button-signin">登录</button>
+					<a href="#">忘记密码？</a>
+				</fieldset>
+			</form>
+
+			<form id="form-signup">
+				<button class="orange">注册</button>
+			</form>
+		</aside>
+	</div>
+</div>
+</body>
+</html>
