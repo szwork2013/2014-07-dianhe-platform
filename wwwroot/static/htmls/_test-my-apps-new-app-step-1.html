@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>点合广告平台</title>
 	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/popup-windows.css"/>
 	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
 	<script src="../scripts/jquery-1.11.1.min.js"></script>
 </head>
@@ -146,5 +147,69 @@
 	</div>
 </div>
 
+<section id="all-popup-windows-container">
+	<section id="popwin-ad-info" class="popup-window">
+		<i class="button button-x"></i>
+
+		<header>
+			<h2>广告状态信息</h2>
+		</header>
+
+		<article>
+			<ul class="labelled-list ad-status-list">
+				<li>一则广告</li>
+				<li><time class="date">2014-07-22</time></li>
+				<li><time class="date">2014-08-01</time><time class="clock">11:22</time></li>
+				<li>广告位资源冲突</li>
+			</ul>
+		</article>
+
+		<footer>
+			<button class="button button-confirm button-close"></button>
+		</footer>
+	</section>
+
+	<section id="popwin-ad-assets-info" class="popup-window">
+		<i class="button button-x"></i>
+
+		<header>
+			<h2>广告素材状态信息</h2>
+		</header>
+
+		<article>
+			<ul class="labelled-list ad-assets-status-list">
+				<li>一张图片</li>
+				<li><time class="date">2014-07-22</time></li>
+				<li><time class="date">2014-08-01</time><time class="clock">11:22</time></li>
+				<li>违法广告法</li>
+			</ul>
+		</article>
+
+		<footer>
+			<button class="button button-confirm button-close"></button>
+		</footer>
+	</section>
+</section>
+
+<script src="../scripts/lly-js.js"></script>
+<script src="../scripts/lly-website.js"></script>
+<script id="script-popup-windows">
+	var popwinAdStatusRootElement = document.querySelector('#popwin-ad-info');
+	var popwinAdAssetsStatusRootElement = document.querySelector('#popwin-ad-assets-info');
+
+	var popwinAdStatus = website.popupWindowsService.createWindow(popwinAdStatusRootElement, {
+		showButtons: [
+			// document.body
+		],
+	});
+
+	var popwinAdAssetsStatus = website.popupWindowsService.createWindow(popwinAdAssetsStatusRootElement, {
+		showButtons: [
+			document.body
+		],
+	});
+
+	popwinAdAssetsStatus.show();
+</script>
 </body>
 </html>

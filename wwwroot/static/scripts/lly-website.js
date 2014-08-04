@@ -342,11 +342,11 @@ var website = new (function WLCWebsite() {
 				toggleButtons: []
 			};
 
-			this.config = function (options) { _config.call(this, options); }
+			this.config = function (options, _allowWarning) { _config.call(this, options, _allowWarning); }
 			this.updateContent = function (innerHTML) { this.rootElement.innerHTML = innerHTML; _refresh.call(this); }
-			this.addShowButtons = function (elementsArray) { return _addButtonsToArray.call(this, elementsArray, this.options.showButtons); }
-			this.addHideButtons = function (elementsArray) { return _addButtonsToArray.call(this, elementsArray, this.options.hideButtons); }
-			this.addToggleButtons = function (elementsArray) { return _addButtonsToArray.call(this, elementsArray, this.options.toggleButtons); }
+			this.addShowButtons = function (elementsArray, _allowWarning) { return _addButtonsToArray.call(this, elementsArray, this.options.showButtons, _allowWarning); }
+			this.addHideButtons = function (elementsArray, _allowWarning) { return _addButtonsToArray.call(this, elementsArray, this.options.hideButtons, _allowWarning); }
+			this.addToggleButtons = function (elementsArray, _allowWarning) { return _addButtonsToArray.call(this, elementsArray, this.options.toggleButtons, _allowWarning); }
 			this.removeShowButtons = function (elementsArray) { return _removeButtonsFromArray.call(this, elementsArray, this.options.showButtons); }
 			this.removeHideButtons = function (elementsArray) { return _removeButtonsFromArray.call(this, elementsArray, this.options.hideButtons); }
 			this.removeToggleButtons = function (elementsArray) { return _removeButtonsFromArray.call(this, elementsArray, this.options.toggleButtons); }
@@ -369,17 +369,18 @@ var website = new (function WLCWebsite() {
 
 			function _setRootElement(rootElement) {
 				if (!wlcJS.domTools.isDom(rootElement)) {
-					e( 'Invalid element for a rootElement of {PopupWindow} Object.' );
+					e('Invalid element for the rootElement of a {popupWindow} object.');
 					return;
 				}
 				this.rootElement = rootElement;
 				this.logName = 'popupwindow "'+this.rootElement.id+'"';
 				_refresh.call(this);
 			}
-			function _config(options) {
+			function _config(options, _allowWarning) {
 
 				var _ = options || {};
 				var _o = this.options;
+				_allowWarning = (typeof _allowWarning === 'undefined') || !!_allowWarning;
 
 				if (typeof _.centered != 'undefined') { _o.centered = !!_.centered; }
 				if (typeof _.autoHide != 'undefined') { _o.autoHide = !!_.autoHide; }
@@ -428,22 +429,22 @@ var website = new (function WLCWebsite() {
 
 				if (Array.isArray(_.showButtons)) {
 					this.clearShowButtons();
-					this.addShowButtons(_.showButtons);
+					this.addShowButtons(_.showButtons, _allowWarning);
 				}
 				if (Array.isArray(_.hideButtons)) {
 					this.clearHideButtons();
-					this.addHideButtons(_.hideButtons);
+					this.addHideButtons(_.hideButtons, _allowWarning);
 				}
 				if (Array.isArray(_.toggleButtons)) {
 					this.clearToggleButtons();
-					this.addToggleButtons(_.toggleButtons);
+					this.addToggleButtons(_.toggleButtons, _allowWarning);
 				}
 
 
 				if (typeof _.onshow === 'function') this.onshow = _.onshow;
 				if (typeof _.onhide === 'function') this.onhide = _.onhide;
 
-				if (this.options.hideButtons.length === 0 && this.options.toggleButtons.length === 0 && !this.options.autoHide) {
+				if (_allowWarning && this.options.hideButtons.length === 0 && this.options.toggleButtons.length === 0 && !this.options.autoHide) {
 					w(this.logName+':\n\tIt has neither hide button nor toggle button.\n\tBeing a NON auto-hide window, it could never be closed interatively.\n\tAlthough it can still be closed programmatically.\n')
 				}
 
@@ -465,8 +466,9 @@ var website = new (function WLCWebsite() {
 					w('The array "'+arrayName+'" of '+this.logName+' has been cleared! From now on, there is nothing inside this array.');
 				}
 			}
-			function _addButtonsToArray(elementOrArrayToAdd, targetArray) {
+			function _addButtonsToArray(elementOrArrayToAdd, targetArray, _allowWarning) {
 				var addedElements = [];
+				_allowWarning = (typeof _allowWarning === 'undefined') || !!_allowWarning;
 
 				if ( typeof elementOrArrayToAdd === 'undefined' || elementOrArrayToAdd === null ) {
 					return addedElements;
@@ -477,6 +479,11 @@ var website = new (function WLCWebsite() {
 				} else {
 					var elementsArray = [].push(elementOrArrayToAdd);
 				}
+
+				var targetArrayName = '';
+				if (targetArray===this.options.showButtons) targetArrayName = '"showButtons"';
+				if (targetArray===this.options.hideButtons) targetArrayName = '"hideButtons"';
+				if (targetArray===this.options.toggleButtons) targetArrayName = '"toggleButtons"';
 
 				for (var i = 0; i < elementsArray.length; i++) {
 					var element = elementsArray[ i ];
@@ -501,13 +508,18 @@ var website = new (function WLCWebsite() {
 						}
 
 						if (!elementAlreadyInOneOfTheArrays) {
+							l(this.logName+': adding ', element, 'to', targetArrayName);
 							targetArray.push( element );
 							addedElements.push( element );
 						} else {
-							w( 'Element already in array "'+elementAlreadyInArrayName+'". Ignored. The element metioned is\n', element);
+							if (_allowWarning) {
+								w( 'Element already in array "'+elementAlreadyInArrayName+'". Ignored.\nThe element metioned is', element, '\n');
+							}
 						}
 					} else {
-						w( 'Invalid element met when trying to add buttons for '+this.logName+'. Ignored.' );
+						if (_allowWarning) {
+							w( 'Invalid element is met when trying to add buttons to '+targetArrayName+' for '+this.logName+'. Ignored.\nThe element metioned is', element, '\n');
+						}
 						continue;
 					}
 				};
@@ -605,17 +617,17 @@ var website = new (function WLCWebsite() {
 			}
 			function _detachAllShowButtons() {
 				for (var i = 0; i < this.options.showButtons.length; i++) {
-					_detachOneShowButton(this.options.showButtons[i]);
+					_detachOneShowButton.call(this, this.options.showButtons[i]);
 				};
 			}
 			function _detachAllHideButtons() {
 				for (var i = 0; i < this.options.hideButtons.length; i++) {
-					_detachOneHideButton(this.options.hideButtons[i]);
+					_detachOneHideButton.call(this, this.options.hideButtons[i]);
 				};
 			}
 			function _detachAllToggleButtons() {
 				for (var i = 0; i < this.options.toggleButtons.length; i++) {
-					_detachOneToggleButton(this.options.toggleButtons[i]);
+					_detachOneToggleButton.call(this, this.options.toggleButtons[i]);
 				};
 			}
 
@@ -703,15 +715,15 @@ var website = new (function WLCWebsite() {
 			if (this.rootElement) {
 				this.rootElement.style.display = 'none';
 				// this.hide(); // will cause fadingOut if jQuery or Zepto presents.
-				this.config(options);
+				this.config(options, false);
 
-				l(this.logName+':\n\tJust for conveniences, construcor is now automatically searching and adding all buttons which should hide this popupWindow ...\n');
+				l(this.logName+':\n\tJust for conveniences, construcor is now automatically searching all possible hide-buttons:');
 				this.addHideButtons([
 					this.rootElement.qS('.button-x'),
 					this.rootElement.qS('.button-ok'),
 					this.rootElement.qS('.button-confirm'),
 					this.rootElement.qS('.button-yes')
-				]);
+				], false);
 				_popupWindowsService.windows.push(this);
 			}
 

@@ -1,0 +1,185 @@
+#all-popup-windows-container {
+	display: block !important;
+	position: static !important;
+	width: 0;
+	height: 0;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	overflow: visible !important;
+	background-color: transparent !important;
+}
+
+#backplate {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-size: 0;
+	float: none;
+	clear: both;
+	z-index: 600;
+
+	background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+
+
+.popup-window {
+	display: block;
+	position: fixed;
+	z-index: 700;
+
+	box-sizing: border-box;
+	width: auto;
+
+	background-color: white;
+	box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.4);
+	}
+
+	.popup-window > header {
+		z-index: 9;
+	}
+	.popup-window > footer {
+		z-index: 10;
+	}
+	.popup-window > article {
+		z-index: 2;
+	}
+
+
+
+
+
+
+
+
+.popup-window,
+.popup-window.has-border {
+	border: 1px solid;
+}
+
+.popup-window.no-border {
+	border: none;
+}
+
+
+
+.popup-window > header,
+.popup-window > footer,
+.popup-window > article {
+	margin: 0;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+
+
+
+
+.popup-window > header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	}
+
+	.popup-window > header h2 {
+		text-align: center;
+		font-size: 1.25rem;
+		margin: 0;
+		letter-spacing: 0.1em;
+	}
+
+
+
+
+
+
+.popup-window > footer {
+	padding-top: 15px;
+	padding-bottom: 25px;
+	}
+
+	.popup-window > footer .button-confirm {
+		display: block;
+		margin: auto;
+	}
+
+
+
+
+.popup-window > article {
+	overflow: hidden;
+	min-height: 2em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	}
+
+	.popup-window > article p {
+		text-align: justify;
+	}
+
+
+	.popup-window > article h3 {
+		width: 100%;
+		font-size: 1rem;
+		line-height: 2em;
+		text-align: center;
+		color: #03a3a6;
+		font-weight: normal;
+	}
+
+	.popup-window > article .illu {
+		width: 100%;
+		margin: 0;
+	}
+
+
+
+
+
+
+
+
+.popup-window .button-x {
+	width: 2em !important;
+	height: 2em !important;
+	line-height: 1.9em !important;
+	border-radius: 1000px !important;
+
+	position: absolute !important;
+	right: -0.75em !important;
+	top: -0.75em !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background-color: #f66 !important;
+	text-indent: 0 !important;
+	text-align: center !important;
+	border: 1px solid transparent;
+	-webkit-transform: scale(0.99,0.99);
+	transform: scale(0.99,0.99);
+}
+
+.popup-window .button-x:after {
+	content: 'x';
+	color: white;
+	font-family: Arial, Helvetica;
+	font-size: 1rem;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.popup-window .button-x:hover {
+	background-color: #f33 !important;
+}
+

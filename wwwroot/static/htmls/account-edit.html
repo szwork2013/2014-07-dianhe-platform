@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="page-ad-create-activity">
+<html lang="zh-CN" class="page-account-edit">
 <head>
 	<meta charset="utf-8">
 	<title>我的账号 - 点合广告平台</title>
 	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
 	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
 	<script src="../scripts/jquery-1.11.1.min.js"></script>
-	<style>
-		.file-path-readonly-input {
-			width: 480px;
-		}
-	</style>
 </head>
 
 <body>
@@ -38,7 +33,9 @@
 			</aside>
 		</header>
 
-		<section id="tab-basic-info" style="display:none;">
+		<section id="tab-basic-info">
+			<header><h3>基本信息</h3></header>
+
 			<div class="section-body">
 				<form id="some-form-untitled">
 
@@ -90,8 +87,9 @@
 					<div class="row required">
 						<aside><label for="verifier">验证码</label></aside>
 						<aside>
+							<input required type="text" name="verifier" id="verifier" value="" class="narrow" placeholder="请照抄右侧验证码" />
 							<img class="verifier-sample" src="../images/_temp/default-verifier-sample.png" />
-							<input required type="text" name="verifier" id="verifier" value="" class="narrow" />
+							<label><a href="#">看不清，换一张图。</a></label>
 							<p class="desc">请输入上图中的字符，字母不区分大小写。</p>
 						</aside>
 					</div>
@@ -108,6 +106,8 @@
 		</section>
 
 		<section id="tab-company-info">
+			<header><h3>我的公司</h3></header>
+
 			<div class="section-body">
 				<form id="some-form-untitled2">
 
@@ -117,6 +117,22 @@
 							<input required type="text" name="company-caption" id="company-caption" value="" />
 						</aside>
 					</div>
+
+					<div class="row required">
+						<aside><label for="company-phone">公司电话</label></aside>
+						<aside>
+							<input required type="tel" name="company-phone" id="company-phone" value="" />
+						</aside>
+					</div>
+
+					<div class="row required">
+						<aside><label for="company-email">公司电子邮箱</label></aside>
+						<aside>
+							<input required type="email" name="company-email" id="company-email" value="" />
+						</aside>
+					</div>
+
+					<hr/>
 
 					<div class="row required">
 						<aside><label>所在城市</label></aside>
@@ -137,19 +153,7 @@
 						</aside>
 					</div>
 
-					<div class="row required">
-						<aside><label for="company-phone">公司电话</label></aside>
-						<aside>
-							<input required type="tel" name="company-phone" id="company-phone" value="" />
-						</aside>
-					</div>
-
-					<div class="row required">
-						<aside><label for="company-email">公司电子邮箱</label></aside>
-						<aside>
-							<input required type="email" name="company-email" id="company-email" value="" />
-						</aside>
-					</div>
+					<hr/>
 
 					<div class="row required">
 						<aside><label>营业执照照片</label></aside>

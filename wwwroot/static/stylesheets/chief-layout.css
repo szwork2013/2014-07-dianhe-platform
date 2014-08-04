@@ -65,14 +65,31 @@
 		form .row,
 		form .row:hover,
 		table.data-sheet tr {
-			transition-property: color, text-shadow-color, background-color, box-shadow-color, border-color, outline-color, opacity;
-			transition-duration: 0.75s;
-			transition-time-function: ease-in;
+			/*transition-property: box-shadow, color, background-color, border-color, opacity, text-shadow; */
+			transition-property:   box-shadow, color, background-color, border-color, opacity;
+		}
+
+		form .row {
+			transition-duration: 0.5s;
+			transition-time-function: ease-out;
 		}
 
 		form .row:hover {
-			transition-duration: 0.2s;
+			transition-duration: 0.1s;
 			transition-time-function: ease-out;
+		}
+
+		a,
+		button,
+		input,
+		select,
+		optgroup,
+		option,
+		nav > ul > li,
+		body > aside .icons-list > li,
+		table.data-sheet tr {
+			transition-duration: 0.6s;
+			transition-time-function: ease-in;
 		}
 
 		a {
@@ -372,6 +389,19 @@
 
 				overflow: hidden;
 				white-space: nowrap;
+			}
+
+
+			.button-ok:before {
+				content: '确定';
+			}
+
+			.button-cancel:before {
+				content: '取消';
+			}
+
+			.button-close:before {
+				content: '关闭';
 			}
 
 
@@ -695,7 +725,6 @@
 
 
 
-
 	.chief-content {
 		margin-top: 120px;
 		margin-bottom: 100px;
@@ -831,13 +860,13 @@
 
 
 
-	section {
+	.chief-content section {
 		box-sizing: border-box;
-		width: 100%-2px;
+		width: 100%;
 		min-height: 50px;
 
 		position: relative;
-		border: 1px solid;
+		border: 1px solid transparent;
 		margin: 30px 0;
 	}
 
@@ -845,7 +874,7 @@
 		margin-top: 0;
 	}*/
 
-	section.single-line-info-bar {
+	.chief-content section.single-line-info-bar {
 		height: 50px;
 		line-height: 50px;
 		padding: 0 20px;
@@ -856,7 +885,7 @@
 
 
 
-	section > header {
+	.chief-content section > header {
 		width: -webkit-calc(100% - 40px);
 		width: calc(100% - 40px);
 		height: 50px;
@@ -867,17 +896,17 @@
 		white-space: nowrap;
 		}
 
-		section > header h3 {
+		.chief-content section > header h3 {
 			width: 120px;
 			display: inline-block;
 			vertical-align: middle;
 			line-height: 50px;
 
 			margin: 0;
-			font-size: 0.875rem;
+			font-size: 1.125rem;
 		}
 
-		section > header.large {
+		.chief-content section > header.large {
 			height: 70px;
 			line-height: 70px;
 		}
@@ -885,10 +914,10 @@
 
 
 
-	section article {
+	.chief-content section article {
 		}
 
-		section article h2 {
+		.chief-content section article h2 {
 			font-size: 1rem;
 		}
 
@@ -1103,7 +1132,7 @@
 		}
 
 		form .row :nth-of-type(2) .desc {
-			font-size: 0.75rem;
+			font-size: 0.875rem;
 			line-height: 1.2rem;
 		}
 
@@ -1130,7 +1159,8 @@
 		form .row aside:nth-of-type(2) fieldset {
 			margin: 0 0 10px 0;
 			width: 620px;
-			outline: 2px solid #3f3030;
+			outline-width: 2px;
+			outline-style: solid;
 			}
 			form .row aside:nth-of-type(2) fieldset .row {
 				padding: 3px 0;
@@ -1140,4 +1170,41 @@
 			}
 			form .row aside:nth-of-type(2) fieldset .row aside:nth-of-type(2) {
 			}
+
+
+	ul.labelled-list {
+		padding-left: 0;
+	}
+		ul.labelled-list > li {
+			list-style: none;
+			display: block;
+			position: relative;
+			max-width: 300px;
+			margin: 1em 0;
+			margin-left: 120px;
+			line-height: 1.66em;
+		}
+
+		ul.labelled-list > li > label:first-child,
+		ul.labelled-list > li:before {
+			display: block;
+			position: absolute;
+			right: 100%;
+			width: 100px;
+			margin-right: 20px;
+			text-align: right;
+			background-color: white;
+		}
+
+	time {
+		display: inline-block;
+		margin-right: 0.5em;
+		}
+
+		time.date {
+		}
+
+		time.clock {
+		}
+
 } /* @media only screen */
