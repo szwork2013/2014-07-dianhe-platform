@@ -104,6 +104,7 @@
 			padding: 0;
 			border: none;
 			height: 1px;
+			overflow: hidden;
 		}
 
 		hr.v { /* v means vertical */
@@ -737,9 +738,7 @@
 			top: 100%;
 			margin-top: 1px;
 			border-style: none;
-			border-color: #ddd;
 			border-width: 0 1px;
-			background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, transparent 100% );
 			z-index: 2;
 		}
 
@@ -1049,7 +1048,7 @@
 			font-size: 0.875rem;
 		}
 
-		form .row aside.col-1 {
+		form .row aside:nth-of-type(1) {
 			clear: left;
 			width: 250px;
 			min-height: 30px;
@@ -1057,7 +1056,7 @@
 			text-align: right;
 		}
 
-		form .row aside.col-2 {
+		form .row aside:nth-of-type(2) {
 			clear: right;
 			width: auto;
 
@@ -1066,7 +1065,7 @@
 
 
 
-		form .row aside.col-1:not(:empty):after {
+		form .row aside:nth-of-type(1):not(:empty):after {
 			content: '：';
 			display: inline-block;
 			line-height: inherit;
@@ -1074,15 +1073,15 @@
 			font-size: 0.875rem;
 		}
 
-		form .row.required.show-hint aside.col-1:not(:empty),
-		form .row.required.show-hint label {
+		form .row.required aside:nth-of-type(1):not(:empty),
+		form .row.required label {
 		}
 
-		form .row.required.show-hint:hover aside.col-1:not(:empty),
-		form .row.required.show-hint:hover label {
+		form .row.required:hover aside:nth-of-type(1):not(:empty),
+		form .row.required:hover label {
 		}
 
-		form .row.required.show-hint aside.col-1:not(:empty):before {
+		form .row.required aside:nth-of-type(1):not(:empty):before {
 			content: '*';
 			display: inline-block;
 			line-height: inherit;
@@ -1094,16 +1093,16 @@
 
 
 
-		form .row .col-2 .thumbnail {
+		form .row :nth-of-type(2) .thumbnail {
 			vertical-align: middle;
 		}
 
-		form .row .col-2 p {
+		form .row :nth-of-type(2) p {
 			font-size: 0.875rem;
 			margin: 0.15em 0 0.35em;
 		}
 
-		form .row .col-2 .desc {
+		form .row :nth-of-type(2) .desc {
 			font-size: 0.75rem;
 			line-height: 1.2rem;
 		}
@@ -1120,7 +1119,7 @@
 			margin-right: 20px;
 		}
 
-		form .row.buttons-section .col-1:after {
+		form .row.buttons-section :nth-of-type(1):after {
 			content: none;
 			margin: 0;
 		}
@@ -1128,17 +1127,17 @@
 
 
 
-		form .row aside.col-2 fieldset {
+		form .row aside:nth-of-type(2) fieldset {
 			margin: 0 0 10px 0;
 			width: 620px;
 			outline: 2px solid #3f3030;
 			}
-			form .row aside.col-2 fieldset .row {
+			form .row aside:nth-of-type(2) fieldset .row {
 				padding: 3px 0;
 			}
-			form .row aside.col-2 fieldset .row aside.col-1 {
+			form .row aside:nth-of-type(2) fieldset .row aside:nth-of-type(1) {
 				width: 80px;
 			}
-			form .row aside.col-2 fieldset .row aside.col-2 {
+			form .row aside:nth-of-type(2) fieldset .row aside:nth-of-type(2) {
 			}
 } /* @media only screen */

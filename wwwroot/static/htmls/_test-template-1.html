@@ -49,30 +49,30 @@
 				<form id="some-form-untitled">
 
 					<div class="row">
-						<aside class="col-1">类别</aside>
-						<aside class="col-2">手机应用</aside>
+						<aside>类别</aside>
+						<aside>手机应用</aside>
 					</div>
 
-					<div class="row required show-hint">
-						<aside class="col-1">平台分类</aside>
-						<aside class="col-2">
+					<div class="row required">
+						<aside>平台分类</aside>
+						<aside>
 							<input required type="radio" name="app-platform" id="app-platform-android" value="android" /><label for="app-platform-android">Android</label>
 							<input required type="radio" name="app-platform" id="app-platform-ios" value="ios" /><label for="app-platform-ios">iOS</label>
 							<p class="desc">目前平台仅接受Android和iOS平台应用</p>
 						</aside>
 					</div>
 
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-name">应用名称</label></aside>
-						<aside class="col-2">
+					<div class="row required">
+						<aside><label for="app-name">应用名称</label></aside>
+						<aside>
 							<input required type="text" name="app-name" id="app-name" value="" />
 							<p class="desc">不超过15个中文字符或30个英文字符</p>
 						</aside>
 					</div>
 
-					<div class="row required show-hint">
-						<aside class="col-1">应用类别</aside>
-						<aside class="col-2">
+					<div class="row required">
+						<aside>应用类别</aside>
+						<aside>
 							<select required id="app-category-level-1">
 								<option>系统输入</option>
 							</select>
@@ -84,16 +84,16 @@
 					</div>
 
 					<div class="row">
-						<aside class="col-1"><label for="app-keywords">搜索标签</label></aside>
-						<aside class="col-2">
+						<aside><label for="app-keywords">搜索标签</label></aside>
+						<aside>
 							<input type="text" name="app-keywords" id="app-keywords" value="" />
 							<p class="desc">应用涉及的关键字，便于用户搜索，多个输入请以空格分隔</p>
 						</aside>
 					</div>
 
 					<div class="row">
-						<aside class="col-1">版权证明</aside>
-						<aside class="col-2">
+						<aside>版权证明</aside>
+						<aside>
 							<button class="gray">本地上传</button>
 							<img class="thumbnail" src="../images/_common/symbol-file-uploading-placeholder.png" />
 							<a href="">删除</a>
@@ -103,9 +103,9 @@
 						</aside>
 					</div>
 
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-language">应用语言</label></aside>
-						<aside class="col-2">
+					<div class="row required">
+						<aside><label for="app-language">应用语言</label></aside>
+						<aside>
 							<select required id="app-language">
 								<option>简体中文</option>
 								<option>繁体中文</option>
@@ -114,26 +114,26 @@
 						</aside>
 					</div>
 
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-cost">应用资费</label></aside>
-						<aside class="col-2">
+					<div class="row required">
+						<aside><label for="app-cost">应用资费</label></aside>
+						<aside>
 							<select required id="app-cost">
 								<option>功能付费</option>
 							</select>
 						</aside>
 					</div>
 
-					<div class="row required show-hint">
-						<aside class="col-1"><label for="app-intro">应用介绍</label></aside>
-						<aside class="col-2">
+					<div class="row required">
+						<aside><label for="app-intro">应用介绍</label></aside>
+						<aside>
 							<textarea required id="app-intro" maxlength="1500" placeholder="something. i dont't know."></textarea>
 							<p class="desc">50到1500字，简述应用的作用、使用方法等信息。</p>
 						</aside>
 					</div>
 
 					<div class="row buttons-section no-hover">
-						<aside class="col-1"></aside>
-						<aside class="col-2">
+						<aside></aside>
+						<aside>
 							<button>下一步</button>
 							<button>保存并结束</button>
 						</aside>
