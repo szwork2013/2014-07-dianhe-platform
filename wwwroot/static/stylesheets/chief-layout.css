@@ -461,7 +461,7 @@
 			position: relative;
 		}
 
-		nav > ul > li.current a {
+		nav > ul > li.current > a {
 			display: none;
 		}
 
@@ -557,18 +557,18 @@
 
 
 
-		body > header nav {
+		body > header nav.level1 {
 			position: absolute;
 			right: 0;
 			bottom: 0;
 			margin-right: -10px;
 			}
 
-			body > header nav ul {
+			body > header nav.level1 > ul {
 				height: 50px;
 			}
 
-			body > header nav ul li {
+			body > header nav.level1 > ul > li {
 				box-sizing: border-box;
 				margin: 0 1.5em;
 				padding: 0 0.1em;
@@ -581,16 +581,63 @@
 				-moz-transition: none;
 			}
 
-			body > header nav ul li:last-of-type {
+			body > header nav.level1 > ul > li:last-of-type {
 				margin-right: 0;
 			}
 
 
-			body > header nav ul li:not(.current):hover {
+			body > header nav.level1 > ul > li:not(.current):hover {
 				-webkit-animation: header-nav-li-blinks 1s ease-in 0s infinite;
 				animation: header-nav-li-blinks 1s ease-in 0s infinite;
 				border-bottom-width: 4px;
-    		}
+			}
+
+
+		body > header nav.level2 {
+			position: absolute;
+			top: 50px;
+			left: -10px;
+			overflow: hidden;
+			height: 0;
+			transition: height 0.26s ease-out 0s;
+			}
+
+		body > header li:hover nav.level2 {
+			height: 100px;
+			}
+
+			body > header nav.level2.right {
+				position: absolute;
+				top: 50px;
+				left: auto;
+				right: -10px;
+			}
+
+			body > header nav.level2 > ul {
+				padding: 10px 0;
+			}
+
+			body > header nav.level2 > ul > li {
+			}
+
+			body > header nav.level2 > ul > li:hover {
+			}
+
+			body > header nav.level2 > ul > li > a {
+				padding: 0 20px;
+				font-size: 0.875rem;
+				height: 40px;
+				line-height: 40px;
+				overflow: hidden;
+				white-space: nowrap;
+				display: block;
+				position: relative;
+				text-indent: 0;
+			}
+
+			body > header nav.level2 > ul > li:hover > a {
+				color: white;
+			}
 
 
 
