@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="page-account-edit">
+<head>
+	<meta charset="utf-8">
+	<title>创建广告 - 点合广告平台</title>
+	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
+	<script src="../scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<header></header>
+<footer></footer>
+<aside></aside>
+<script id="script-loading-html-snippets-0">
+	$(document.body.querySelector('header')).load('snippets/header-default.html');
+	$(document.body.querySelector('footer')).load('snippets/footer-default.html');
+	$(document.body.querySelector('aside')).load('snippets/sidebar-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<header><h1>创建广告</h1></header>
+
+		<section id="tab-basic-info">
+			<div class="section-body">
+				<form id="some-form-untitled">
+
+					<div class="row required">
+						<aside><label for="ad-caption">广告名称</label></aside>
+						<aside>
+							<input required type="email" name="ad-caption" id="ad-caption" value="" />
+						</aside>
+					</div>
+
+					<div class="row required">
+						<aside><label for="associated-activity">所属活动</label></aside>
+						<aside>
+							<input required type="tel" name="associated-activity" id="associated-activity" value="" />
+						</aside>
+					</div>
+
+					<div class="row required">
+						<aside><label for="ad-start-time">广告开始时间</label></aside>
+						<aside>
+							<input required type="text" name="ad-start-time" id="ad-start-time" value="2014-08-01" />
+						</aside>
+					</div>
+
+					<div class="row">
+						<aside><label for="ad-end-time">广告结束时间</label></aside>
+						<aside>
+							<input type="text" name="ad-end-time" id="ad-end-time" value="2014-08-02" />
+						</aside>
+					</div>
+
+					<hr/>
+
+					<div class="row">
+						<aside><label>计费方式</label></aside>
+						<aside>
+							<input type="radio" name="ad-fee-type" id="ad-fee-type-cpm" value="cpm" checked /><label for="ad-fee-type-cpm">CPM</label>
+							<input type="radio" name="ad-fee-type" id="ad-fee-type-cpd" value="cpd" 		/><label for="ad-fee-type-cpd">CPD</label>
+						</aside>
+					</div>
+
+					<div class="row">
+						<aside><label>日预算</label></aside>
+						<aside>
+							<input type="text" name="ad-budgets-daily" id="ad-budgets-daily-cpd" value="" /><label for="ad-budgets-daily-cpd">元</label><br/>
+						</aside>
+					</div>
+
+					<div class="row">
+						<aside><label>出价CPM</label></aside>
+						<aside>
+							<input type="text" name="ad-budgets-daily" id="ad-budgets-daily-cpm" value="" /><label for="ad-budgets-daily-cpm">元</label>
+						</aside>
+					</div>
+
+					<hr/>
+
+					<div class="row required">
+						<aside><label>绑定素材</label></aside>
+						<aside>
+							<select required name="bound-asset" id="bound-asset">
+								<option>素材1</option>
+								<option>素材2</option>
+								<option>素材3</option>
+								<option>素材4</option>
+							</select>
+						</aside>
+					</div>
+
+					<div class="row required">
+						<aside><label>绑定广告位</label></aside>
+						<aside>
+							<select required name="bound-ad-socket" id="bound-ad-socket">
+								<option>广告位1</option>
+								<option>广告位2</option>
+								<option>广告位3</option>
+								<option>广告位4</option>
+							</select>
+						</aside>
+					</div>
+
+					<hr/>
+
+					<div class="row">
+						<aside><label for="ad-desc">广告说明</label></aside>
+						<aside>
+							<textarea id="ad-desc" maxlength="1500" placeholder="请填写广告说明。限1500字。"></textarea>
+						</aside>
+					</div>
+
+					<div class="row no-hover">
+						<aside></aside>
+						<aside>
+							<input type="checkbox" name="redirect" id="redirect" /><label for="redirect">开启广告定向</label>
+						</aside>
+					</div>
+
+					<div class="row no-hover">
+						<aside></aside>
+						<aside>
+							<div class="item-selector">
+								<header>城市定向</header>
+								<div class="chief">
+									<aside>
+										<ul class="candidates-list level1">
+											<li><a href="#">北京</a></li>
+											<li><a href="#">上海</a></li>
+											<li><a href="#">天津</a></li>
+											<li><a href="#">重庆</a></li>
+											<li><a href="#">广东</a></li>
+											<li><a href="#">江苏</a>
+												<ul class="candidates-list level2">
+													<li><a href="#">南京</a></li>
+													<li><a href="#">扬州</a></li>
+													<li><a href="#">苏州</a></li>
+													<li><a href="#">泰州</a></li>
+													<li><a href="#">徐州</a></li>													
+												</ul>
+											</li>
+											<li><a href="#">浙江</a>
+												<ul class="candidates-list level2">
+													<li><a href="#">杭州</a></li>
+													<li><a href="#">宁波</a></li>
+												</ul>
+											</li>
+										</ul>
+									</aside>
+
+									<aside>
+										<ul class="tags-list">
+											<li><a href="#">江西</a></li>
+											<li><a href="#">江苏</a></li>
+										</ul>
+									</aside>
+								</div>
+							</div>
+
+							<div class="item-selector">
+								<header>商户类型定向</header>
+								<div class="chief">
+									<aside>
+										<ul class="candidates-list level1">
+											<li><a href="#">江西</a></li>
+										</ul>										
+									</aside>
+
+									<aside>
+										<ul class="tags-list">
+											<li><a href="#">健身中心</a></li>
+											<li><a href="#">咖啡厅</a></li>
+										</ul>
+									</aside>
+								</div>
+							</div>
+						</aside>
+					</div>
+
+					<hr class="spacer" />
+
+					<div class="row buttons-section">
+						<aside></aside>
+						<aside>
+							<button>保存</button>
+							<button class="green">提交审核</button>
+							<button class="red">废弃</button>
+						</aside>
+					</div>
+
+				</form>
+			</div>
+		</section>
+	</div>
+</div>
+
+</body>
+</html>
