@@ -38,6 +38,26 @@ hr
 }
 
 
+em,
+.cool {
+	color: #038ace !important;
+}
+
+.ok {
+	color: #0c0 !important;
+}
+
+.hot {
+	color: #f83 !important;
+}
+
+.error,
+.error > a,
+.failure > a,
+.failure {
+	color: #f33 !important;
+}
+
 
 
 textarea,
@@ -320,13 +340,13 @@ body > aside .icons-list > li {
 	color: white;
 	background-color: #4f88cd;
 	cursor: pointer;
-	border: 2px solid transparent;
+	border: 1px solid transparent;
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.26);
 }
 
 body > aside .icons-list > li:hover {
 	background-color: #8bf;
-	border: 2px solid #69f;
+	border: 1px solid #69f;
 	box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.13);
 }
 
@@ -448,6 +468,16 @@ body > aside .icons-list > li:hover {
 	box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.05);
 	}
 
+	.chief-content section.single-line-info-bar {
+		}
+
+		.chief-content section.single-line-info-bar aside i {
+			color: #bbb;
+		}
+
+		.chief-content section.single-line-info-bar aside em {
+		}
+
 
 	.chief-content section > header {
 		background-color: #fafafa;
@@ -460,6 +490,7 @@ body > aside .icons-list > li:hover {
 
 		.chief-content section > header.large {
 			background-color: white;
+			border-bottom: 1px solid #ddd;
 		}
 
 
@@ -475,7 +506,7 @@ body > aside .icons-list > li:hover {
 
 
 table.data-sheet {
-	color: #4d5b64;
+	color: black;
 	}
 
 	table.data-sheet thead {
@@ -490,26 +521,13 @@ table.data-sheet {
 
 
 	table.data-sheet tr {
-		border-top: 1px solid #ededed;
+		border-bottom: 1px solid #e0e0e0;
 		}
 
 		table.data-sheet thead tr {
-			background-color: #f9f9f9;
-		}
-		/*
-		table.data-sheet thead tr {
-			border-top-width: 0;
+			background-color: white;
 		}
 
-		table.data-sheet tbody tr:first-of-type {
-			border-top-width: 0;
-		}
-
-		table.data-sheet tfoot + tbody tr:first-of-type,
-		table.data-sheet thead + tbody tr:first-of-type {
-			border-top-width: 1px;
-		}
-		*/
 		table.data-sheet tfoot tr {
 			background-color: #f9f9f9;
 		}
@@ -520,16 +538,19 @@ table.data-sheet {
 		}
 
 		table.data-sheet tbody tr:nth-child(odd) {
-			background-color: white;
+			background-color: #f8f8f8;
 		}
 
 		table.data-sheet tbody tr:nth-child(even) {
-			background-color: #f9f9f9;
+			background-color: #f0f0f0;
 		}
 
+		table.data-sheet tbody tr.selected,
 		table.data-sheet tbody tr:hover {
-			background-color: #E8F6F4;
+			color: white;
+			background-color: black;
 		}
+
 
 
 	table.data-sheet a,
@@ -543,28 +564,26 @@ table.data-sheet {
 
 		table.data-sheet a:hover,
 		table.data-sheet a:active {
-			color: #33CCff;
+			color: #6ef;
 		}
 
 
 
-
-table.data-sheet.apps-management {
+	table.data-sheet.ad-activities-management tr td:nth-of-type(6)  {
+		color: #f83;
 	}
 
-	table.data-sheet.apps-management tbody tr td {
+	table.data-sheet.ads-management td:first-of-type a:hover,
+	table.data-sheet.ad-activities-management td:first-of-type a:hover,
+	table.data-sheet.ad-assets-management td:first-of-type a:hover {
+		color: white !important;
+		background-color: #36c;
 	}
 
-	table.data-sheet.apps-management tr td i:before {
-		/*content: '未开始';*/
-		color: #e8e8e8;
-	}
-
-	table.data-sheet.apps-management tr td em {
-	}
-
-	table.data-sheet.apps-management tr td:nth-of-type(2) time {
-		color: #bebec0;
+	table.data-sheet.ads-management td:nth-of-type(2) a.failure:hover,
+	table.data-sheet.ad-assets-management td:nth-of-type(2) a.failure:hover {
+		color: white !important;
+		background-color: #c33;
 	}
 
 
@@ -699,6 +718,17 @@ ul.labelled-list {
 		content: '审核失败原因';
 	}
 
+	ul.labelled-list.ad-status-list > li:nth-of-type(1) {
+		color: blue;
+	}
+
+	ul.labelled-list.ad-status-list > li:nth-of-type(4) {
+		color: red;
+	}
+
+
+
+
 	ul.labelled-list.ad-assets-status-list > li:nth-of-type(1):before {
 		content: '素材名称';
 	}
@@ -712,13 +742,14 @@ ul.labelled-list {
 		content: '审核失败原因';
 	}
 
-	ul.labelled-list.ad-status-list > li:nth-of-type(1) {
+	ul.labelled-list.ad-assets-status-list > li:nth-of-type(1) {
 		color: blue;
 	}
 
-	ul.labelled-list.ad-status-list > li:nth-of-type(4) {
+	ul.labelled-list.ad-assets-status-list > li:nth-of-type(4) {
 		color: red;
 	}
+
 
 
 time.date {
@@ -726,5 +757,6 @@ time.date {
 }
 
 time.clock {
-	color: orange;
+	color: #f33;
 }
+

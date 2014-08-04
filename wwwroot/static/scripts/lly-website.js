@@ -474,10 +474,11 @@ var website = new (function WLCWebsite() {
 					return addedElements;
 				}
 
+				var elementsArray = [];
 				if (Array.isArray(elementOrArrayToAdd)) {
-					var elementsArray = elementOrArrayToAdd;
+					elementsArray = elementOrArrayToAdd;
 				} else {
-					var elementsArray = [].push(elementOrArrayToAdd);
+					elementsArray.push(elementOrArrayToAdd);
 				}
 
 				var targetArrayName = '';

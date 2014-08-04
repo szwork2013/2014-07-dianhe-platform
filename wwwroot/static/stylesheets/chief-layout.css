@@ -410,6 +410,10 @@
 			text-align: center;
 		}
 
+		.right-text {
+			text-align: right;
+		}
+
 
 		.state-zan-cun:before {
 			content: '暂存';
@@ -735,7 +739,6 @@
 			display: block;
 			position: relative;
 			float: left;
-			margin-right: 40px;
 		}
 
 		.chief-content aside.right {
@@ -875,20 +878,36 @@
 	}*/
 
 	.chief-content section.single-line-info-bar {
-		height: 50px;
-		line-height: 50px;
+		height: 80px;
+		line-height: 80px;
 		padding: 0 20px;
 		white-space: nowrap;
 		overflow: hidden;
-	}
+		}
+
+		.chief-content section.single-line-info-bar aside i {
+			font-style: normal;
+			vertical-align: middle;
+		}
+
+		.chief-content section.single-line-info-bar aside i:first-child:after {
+			content: '：';
+		}
+
+		.chief-content section.single-line-info-bar aside em {
+			font-style: normal;
+			font-size: 2em;
+			vertical-align: middle;
+			margin-left: 0.25em;
+			margin-right: 0.25em;
+		}
 
 
 
 
 	.chief-content section > header {
-		width: -webkit-calc(100% - 40px);
-		width: calc(100% - 40px);
 		height: 50px;
+		line-height: 47px;
 
 		margin: 0;
 		padding: 0 20px;
@@ -928,7 +947,6 @@
 		width: 100%;
 		border-collapse: collapse;
 		font-size: 0.875rem;
-		color: #4d5b64;
 		}
 
 		table.data-sheet thead {
@@ -941,29 +959,13 @@
 		}
 
 
-
 		table.data-sheet tr {
 			}
 
 			table.data-sheet thead tr {
 			}
-			/*
-			table.data-sheet thead tr {
-				border-top-width: 0;
-			}
-
-			table.data-sheet tbody tr:first-of-type {
-				border-top-width: 0;
-			}
-
-			table.data-sheet tfoot + tbody tr:first-of-type,
-			table.data-sheet thead + tbody tr:first-of-type {
-				border-top-width: 1px;
-			}
-			*/
 			table.data-sheet tfoot tr {
 			}
-
 
 
 			table.data-sheet tbody tr {
@@ -980,53 +982,203 @@
 
 
 
+
 		table.data-sheet tr th,
 		table.data-sheet tr td {
 			height: 49px;
 			line-height: 49px;
+			box-sizing: border-box;
+			padding: 0 10px;
 
 			position: relative;
-			padding: 0;
-
 			text-align: center;
+			overflow: hidden;
+			white-space: nowrap;
 		}
 
 		table.data-sheet input {
 			vertical-align: middle;
 		}
 
-
-
-
-	table.data-sheet.apps-management {
+		table.data-sheet a,
+		table.data-sheet a:link {
+			margin-right: 2em;
 		}
 
-		table.data-sheet.apps-management tbody tr td {
-			padding-bottom: 14px;
+		table.data-sheet a:last-child,
+		table.data-sheet a:only-child {
+			margin-right: 0;
 		}
 
-		table.data-sheet.apps-management tr th:nth-of-type(2),
-		table.data-sheet.apps-management tr td:nth-of-type(2) {
-			text-align: left !important;
+
+
+	table.data-sheet.ads-management {
 		}
 
-		table.data-sheet.apps-management tr td i:before {
-			content: '未开始';
-			font-style: normal;
+		table.data-sheet.ads-management tr th,
+		table.data-sheet.ads-management tr td {
 		}
 
-		table.data-sheet.apps-management tr td em {
-			font-style: normal;
+		table.data-sheet.ads-management tr th.ad-name {
+			width: auto;
 		}
 
-		table.data-sheet.apps-management tr td:nth-of-type(2) time {
-			position: absolute;
-			left: 0;
-			top: 37px;
-			line-height: 1.2em;
-			display: block;
-			font-style: normal;
+		table.data-sheet.ads-management tr th:nth-of-type(1),
+		table.data-sheet.ads-management tr td:nth-of-type(1) {
+			padding-left: 20px;
+			padding-right: 20px;
+			text-align: left;
 		}
+
+		table.data-sheet.ads-management tr th.ad-status {
+			width: 120px;
+		}
+
+		table.data-sheet.ads-management tr th.ad-op {
+			width: 150px;
+		}
+
+		table.data-sheet.ads-management tr th[class|='ad-time'] {
+			width: 120px;
+		}
+
+		table.data-sheet.ads-management tr th.ad-dimensions {
+			width: 150px;
+		}
+
+		table.data-sheet.ads-management tr th.ad-budgets-daily,
+		table.data-sheet.ads-management tr th.ad-cost-today {
+			width: 150px;
+		}
+
+		table.data-sheet.ads-management tr th:nth-of-type(6),
+		table.data-sheet.ads-management tr th:nth-of-type(7),
+		table.data-sheet.ads-management tr td:nth-of-type(6),
+		table.data-sheet.ads-management tr td:nth-of-type(7)  {
+			text-align: right;
+		}
+
+		table.data-sheet.ads-management tr td:nth-of-type(6),
+		table.data-sheet.ads-management tr td:nth-of-type(7) {
+			padding-right: 20px;
+		}
+
+
+
+	table.data-sheet.ad-activities-management {
+		}
+
+		table.data-sheet.ad-activities-management tr th,
+		table.data-sheet.ad-activities-management tr td {
+		}
+
+		table.data-sheet.ad-activities-management tr th.ad-active-name {
+			width: auto;
+		}
+
+		table.data-sheet.ad-activities-management tr th:nth-of-type(1),
+		table.data-sheet.ad-activities-management tr td:nth-of-type(1) {
+			padding-left: 20px;
+			padding-right: 20px;
+			text-align: left;
+		}
+
+		table.data-sheet.ad-activities-management tr th.ad-active-op {
+			width: 120px;
+		}
+
+		table.data-sheet.ad-activities-management tr th[class|='ad-active-time'] {
+			width: 120px;
+		}
+
+		table.data-sheet.ad-activities-management tr th.ad-active-budgets,
+		table.data-sheet.ad-activities-management tr th.ad-active-cost {
+			width: 150px;
+		}
+
+		table.data-sheet.ad-activities-management tr th:nth-of-type(5),
+		table.data-sheet.ad-activities-management tr th:nth-of-type(6),
+		table.data-sheet.ad-activities-management tr td:nth-of-type(5),
+		table.data-sheet.ad-activities-management tr td:nth-of-type(6)  {
+			text-align: right;
+		}
+
+		table.data-sheet.ad-activities-management tr td:nth-of-type(5),
+		table.data-sheet.ad-activities-management tr td:nth-of-type(6) {
+			padding-right: 20px;
+		}
+
+		table.data-sheet.ad-activities-management tr th.ad-active-ads {
+			width: 120px;
+		}
+
+
+
+	table.data-sheet.ad-assets-management {
+		}
+
+		table.data-sheet.ad-assets-management tr th,
+		table.data-sheet.ad-assets-management tr td {
+		}
+
+		table.data-sheet.ad-assets-management tr th.asset-name {
+			width: auto;
+		}
+
+		table.data-sheet.ad-assets-management tr th:nth-of-type(1),
+		table.data-sheet.ad-assets-management tr td:nth-of-type(1) {
+			padding-left: 20px;
+			padding-right: 20px;
+			text-align: left;
+		}
+
+		table.data-sheet.ad-assets-management tr th.asset-status {
+			width: 120px;
+		}
+
+		table.data-sheet.ad-assets-management tr th.asset-op {
+			width: 150px;
+		}
+
+		table.data-sheet.ad-assets-management tr th.asset-format {
+			width: 120px;
+		}
+
+		table.data-sheet.ad-assets-management tr th.asset-dimensions {
+			width: 150px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+
+
+	table.data-sheet.ads-management td:nth-of-type(2) a,
+	table.data-sheet.ad-assets-management td:nth-of-type(2) a,
+	table.data-sheet td:first-of-type a {
+		display: block;
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 100%;
+		height: 49px; /* for IE */
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	table.data-sheet td:first-of-type a {
+		padding: 0 20px;
+	}
+	table.data-sheet.ads-management td:nth-of-type(2) a,
+	table.data-sheet.ad-assets-management td:nth-of-type(2) a {
+		padding: 0 10px;
+	}
+
+
+
+
+
+
+
+
 
 
 
@@ -1172,6 +1324,10 @@
 			}
 
 
+
+
+
+
 	ul.labelled-list {
 		padding-left: 0;
 	}
@@ -1196,7 +1352,7 @@
 			background-color: white;
 		}
 
-	time {
+	time:not(:only-child) {
 		display: inline-block;
 		margin-right: 0.5em;
 		}
