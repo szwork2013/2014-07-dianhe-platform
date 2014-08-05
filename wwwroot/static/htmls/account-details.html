@@ -59,7 +59,7 @@
 						</aside>
 					</div>
 
-					<div class="row no-hover">
+					<div class="row no-hover" id="receipt-table">
 						<aside></aside>
 						<aside>
 							<fieldset>
@@ -125,5 +125,21 @@
 	</div>
 </div>
 
+<script id="script-temp-for-testing">
+	var receiptCheckbox = document.querySelector('#send-me-receipt');
+	var $receiptTable = $('#receipt-table');
+
+	$(receiptCheckbox).on('change', function (e) {
+		console.log($receiptTable[0]);
+		if (this.checked) {
+			$receiptTable.slideDown();
+		} else {
+			$receiptTable.slideUp();
+		}
+	});
+
+	$receiptTable.hide();
+	receiptCheckbox.checked = false;
+</script>
 </body>
 </html>

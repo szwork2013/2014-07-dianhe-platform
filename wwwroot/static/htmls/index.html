@@ -49,7 +49,7 @@
 
 
 		.signup-signin form input,
-		.signup-signin form button,
+		.signup-signin button,
 		.signup-signin #dianhe-verifier-sample {
 			float: left;
 			margin: 0 0 16px 24px;
@@ -62,7 +62,7 @@
 		}
 
 		.signup-signin form input,
-		.signup-signin form button {
+		.signup-signin button {
 			width: 250px;
 			height: 40px;
 		}
@@ -121,14 +121,12 @@
 					<input required type="text"		name="dianhe-verifier"	id="dianhe-verifier"	placeholder="右侧验证码"	value="" />
 					<img id="dianhe-verifier-sample" src="../images/_temp/default-verifier-sample.png" />
 
-					<button id="button-signin">登录</button>
-					<a href="#">忘记密码？</a>
+					<button id="button-signin" onclick="location.assign('account-index.html');">登录</button>
+					<a href="account-find-lost-password.html">忘记密码？</a>
 				</fieldset>
 			</form>
 
-			<form id="form-signup">
-				<button class="orange">注册</button>
-			</form>
+			<button class="orange" onclick="location.assign('account-sign-up.html');">注册</button>
 		</aside>
 	</div>
 </div>
