@@ -32,7 +32,7 @@
 
 		<section>
 			
-			<header class="large"><button id="button-create-ad">创建广告活动</button></header> 
+			<header class="large"><button id="button-create-ad" onclick="location.assign('ad-create-ad.html');">创建广告</button></header> 
 
 			<div class="section-body">
 				<table class="data-sheet ads-management">
@@ -122,15 +122,25 @@
 <script src="../scripts/lly-js.js"></script>
 <script src="../scripts/lly-website.js"></script>
 <script id="script-popup-windows">
+	var tempData1 = new Date('2014-07-22').toLocaleDateString();
+	var tempData2 = new Date('2014-08-03 12:34').toLocaleDateString();
+	var tempJsonData = {
+		assetName: '又有一则作废的广告',
+		submitDate: tempData1,
+		auditDate: tempData2,
+		auditClock: new Date('2014-08-03 12:34').toLocaleTimeString(),
+		rejectedReason: '广告位资源冲突'
+	}
+
 	var popwinAdStatus = website.popupWindowsService.createWindow( document.querySelector('#popwin-ad-info') );
 		popwinAdStatus.addShowButtons( document.querySelector('.failure') );
 		popwinAdStatus.onshow = function () {
-			l(this.rootElement);
+			// l(this.rootElement);
 			var items = this.rootElement.querySelectorAll('.ad-status-list li');
-			items[0].innerHTML = '又有一则作废的广告';
-			items[1].innerHTML = '<time class="date">'+Date('2014-07-22')+'</time>';
-			items[2].innerHTML = '<time class="date">'+Date('2014-08-03')+'</time><time class="clock">12:34</time>';
-			items[3].innerHTML = '广告位资源冲突';
+			items[0].innerHTML = tempJsonData.assetName;
+			items[1].innerHTML = '<time class="date">'+tempJsonData.submitDate+'</time>';
+			items[2].innerHTML = '<time class="date">'+tempJsonData.auditDate+'</time><time class="clock">'+tempJsonData.auditClock+'</time>';
+			items[3].innerHTML = tempJsonData.rejectedReason;
 		}
 </script>
 

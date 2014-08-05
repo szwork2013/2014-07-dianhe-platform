@@ -31,7 +31,7 @@
 
 		<section>
 			
-			<header class="large"><button id="button-create-ad">新建素材</button></header> 
+			<header class="large"><button id="button-create-ad" onclick="location.assign('ad-create-assets.html');">新建素材</button></header> 
 
 			<div class="section-body">
 				<table class="data-sheet ad-assets-management">
@@ -111,16 +111,25 @@
 <script src="../scripts/lly-js.js"></script>
 <script src="../scripts/lly-website.js"></script>
 <script id="script-popup-windows">
-	var popwinAdAssetsStatus = website.popupWindowsService.createWindow( document.querySelector('#popwin-ad-assets-info') );
+	var tempData1 = new Date('2014-07-22').toLocaleDateString();
+	var tempData2 = new Date('2014-08-03 12:34').toLocaleDateString();
+	var tempJsonData = {
+		assetName: '又有一个没通过审核的素材',
+		submitDate: tempData1,
+		auditDate: tempData2,
+		auditClock: new Date('2014-08-03 12:34').toLocaleTimeString(),
+		rejectedReason: '违法广告法'
+	}
 
+	var popwinAdAssetsStatus = website.popupWindowsService.createWindow( document.querySelector('#popwin-ad-assets-info') );
 		popwinAdAssetsStatus.addShowButtons( document.querySelector('.failure') );
 		popwinAdAssetsStatus.onshow = function () {
-			l(this.rootElement);
+			// l(this.rootElement);
 			var items = this.rootElement.querySelectorAll('.ad-assets-status-list li');
-			items[0].innerHTML = '又有一个没通过审核的素材';
-			items[1].innerHTML = '<time class="date">'+Date('2014-07-22')+'</time>';
-			items[2].innerHTML = '<time class="date">'+Date('2014-08-03')+'</time><time class="clock">12:34</time>';
-			items[3].innerHTML = '违法广告法';
+			items[0].innerHTML = tempJsonData.assetName;
+			items[1].innerHTML = '<time class="date">'+tempJsonData.submitDate+'</time>';
+			items[2].innerHTML = '<time class="date">'+tempJsonData.auditDate+'</time><time class="clock">'+tempJsonData.auditClock+'</time>';
+			items[3].innerHTML = tempJsonData.rejectedReason;
 		}
 </script>
 

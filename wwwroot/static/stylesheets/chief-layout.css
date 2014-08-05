@@ -1,3 +1,18 @@
+/* begin of part of Font Awesome 3.2.1 */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('../fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* end of part of Font Awesome 3.2.1 */
+
+
+
+
 @media only screen {
 	body > header {
 		z-index: 500;
@@ -389,6 +404,7 @@
 
 				overflow: hidden;
 				white-space: nowrap;
+				cursor: pointer;
 			}
 
 
@@ -1264,7 +1280,7 @@
 		form .row.required {
 		}
 
-		form .row aside {
+		form .row > aside {
 			margin: 0 0 0 20px;
 			display: block;
 			float: left;
@@ -1272,11 +1288,11 @@
 			font-size: 0;
 		}
 
-		form .row aside > * {
+		form .row > aside > * {
 			font-size: 0.875rem;
 		}
 
-		form .row aside:nth-of-type(1) {
+		form .row > aside:nth-of-type(1) {
 			clear: left;
 			width: 250px;
 			min-height: 30px;
@@ -1284,7 +1300,7 @@
 			text-align: right;
 		}
 
-		form .row aside:nth-of-type(2) {
+		form .row > aside:nth-of-type(2) {
 			clear: right;
 			width: auto;
 
@@ -1293,7 +1309,7 @@
 
 
 
-		form .row aside:nth-of-type(1):not(:empty):after {
+		form .row > aside:nth-of-type(1):not(:empty):after {
 			content: '：';
 			display: inline-block;
 			line-height: inherit;
@@ -1301,15 +1317,15 @@
 			font-size: 0.875rem;
 		}
 
-		form .row.required aside:nth-of-type(1):not(:empty),
+		form .row.required > aside:nth-of-type(1):not(:empty),
 		form .row.required label {
 		}
 
-		form .row.required:hover aside:nth-of-type(1):not(:empty),
+		form .row.required:hover > aside:nth-of-type(1):not(:empty),
 		form .row.required:hover label {
 		}
 
-		form .row.required aside:nth-of-type(1):not(:empty):before {
+		form .row.required > aside:nth-of-type(1):not(:empty):before {
 			content: '*';
 			display: inline-block;
 			line-height: inherit;
@@ -1321,16 +1337,16 @@
 
 
 
-		form .row :nth-of-type(2) .thumbnail {
+		form .row > aside:nth-of-type(2) .thumbnail {
 			vertical-align: middle;
 		}
 
-		form .row :nth-of-type(2) p {
+		form .row > aside:nth-of-type(2) p {
 			font-size: 0.875rem;
 			margin: 0.15em 0 0.35em;
 		}
 
-		form .row :nth-of-type(2) .desc {
+		form .row > aside:nth-of-type(2) .desc {
 			font-size: 0.875rem;
 			line-height: 1.2rem;
 		}
@@ -1355,19 +1371,19 @@
 
 
 
-		form .row aside:nth-of-type(2) fieldset {
+		form .row > aside:nth-of-type(2) fieldset {
 			margin: 0 0 10px 0;
 			width: 620px;
 			outline-width: 2px;
 			outline-style: solid;
 			}
-			form .row aside:nth-of-type(2) fieldset .row {
+			form .row > aside:nth-of-type(2) fieldset .row {
 				padding: 3px 0;
 			}
-			form .row aside:nth-of-type(2) fieldset .row aside:nth-of-type(1) {
+			form .row > aside:nth-of-type(2) fieldset .row aside:nth-of-type(1) {
 				width: 80px;
 			}
-			form .row aside:nth-of-type(2) fieldset .row aside:nth-of-type(2) {
+			form .row > aside:nth-of-type(2) fieldset .row aside:nth-of-type(2) {
 			}
 
 

@@ -168,12 +168,16 @@
 	border: 1px solid transparent;
 	-webkit-transform: scale(0.99,0.99);
 	transform: scale(0.99,0.99);
+	cursor: pointer;
 }
 
 .popup-window .button-x:after {
-	content: 'x';
+	/*content: 'x';
+	font-family: Arial, Helvetica;*/
+	content: '\f00d';
+	font-family: FontAwesome;
+	
 	color: white;
-	font-family: Arial, Helvetica;
 	font-size: 1rem;
 	font-weight: normal;
 	font-style: normal;

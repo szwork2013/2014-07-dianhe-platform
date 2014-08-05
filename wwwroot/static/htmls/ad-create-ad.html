@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>创建广告 - 点合广告平台</title>
 	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/temp.css"/>
 	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
 	<script src="../scripts/jquery-1.11.1.min.js"></script>
 </head>
@@ -120,59 +121,102 @@
 						</aside>
 					</div>
 
-					<div class="row no-hover">
+					<div class="row no-hover" id="redirect-items-selector-root">
 						<aside></aside>
 						<aside>
-							<div class="item-selector">
-								<header>城市定向</header>
-								<div class="chief">
+							<div class="items-selector">
+								<header><h3>城市定向</h3><aside class="right">已选定<em class="hot">6</em>个城市</aside></header>
+								<div class="lists-container">
 									<aside>
 										<ul class="candidates-list level1">
-											<li><a href="#">北京</a></li>
-											<li><a href="#">上海</a></li>
-											<li><a href="#">天津</a></li>
-											<li><a href="#">重庆</a></li>
-											<li><a href="#">广东</a></li>
-											<li><a href="#">江苏</a>
+											<li><span>北京</span><i></i></li>
+
+											<li><span>上海</span><i></i></li>
+
+											<li><span>天津</span><i></i></li>
+
+											<li><span>重庆</span><i></i></li>
+
+											<li><span>广东</span><i></i></li>
+
+											<li class="expanded"><span>江西省</span><i></i>
 												<ul class="candidates-list level2">
-													<li><a href="#">南京</a></li>
-													<li><a href="#">扬州</a></li>
-													<li><a href="#">苏州</a></li>
-													<li><a href="#">泰州</a></li>
-													<li><a href="#">徐州</a></li>													
+													<li class="expanded"><span>南昌市</span><i></i>
+														<!-- <ul class="candidates-list level3">
+															<li><span>东湖区</span><i></i></li>
+															<li><span>西湖区</span><i></i></li>
+															<li><span>青山湖区</span><i></i></li>
+															<li><span>青云谱区</span><i></i></li>
+														</ul> -->
+													</li>
+													<li><span>九江市</span><i></i></li>
+													<li><span>赣州市</span><i></i></li>
+													<li><span>吉安市</span><i></i></li>
+												</ul>
+
+											<li class="expanded"><span>江苏省</span><i></i>
+												<ul class="candidates-list level2">
+													<li><span>南京</span><i></i></li>
+													<li><span>扬州</span><i></i></li>
+													<li><span>苏州</span><i></i></li>
+													<li><span>泰州</span><i></i></li>
+													<li><span>徐州</span><i></i></li>													
 												</ul>
 											</li>
-											<li><a href="#">浙江</a>
+
+											<li class="expanded"><span>浙江省</span><i></i>
 												<ul class="candidates-list level2">
-													<li><a href="#">杭州</a></li>
-													<li><a href="#">宁波</a></li>
+													<li><span>杭州</span><i></i></li>
+													<li><span>宁波</span><i></i></li>
 												</ul>
+											</li>
 											</li>
 										</ul>
 									</aside>
 
 									<aside>
-										<ul class="tags-list">
-											<li><a href="#">江西</a></li>
-											<li><a href="#">江苏</a></li>
+										<ul class="selected-items-list">
+											<li class="level2">南昌市<i></i></li>
+											<!-- <li class="level3">东湖区<i></i></li> -->
+											<li class="level1">江苏<i></i></li>
+											<li class="level1">北京<i></i></li>
+											<!-- <li class="level3">泰安<i></i></li> -->
+											<li class="level1">呼伦贝尔<i></i></li>
+											<!-- <li class="level3">塔特拉玛干<i></i></li> -->
+											<li class="level2">徐汇区<i></i></li>
+											<li class="level1">上海市<i></i></li>
 										</ul>
 									</aside>
 								</div>
 							</div>
 
-							<div class="item-selector">
-								<header>商户类型定向</header>
-								<div class="chief">
+							<div class="items-selector">
+								<header><h3>商户类型定向</h3><aside class="right">已选定<em class="hot">3</em>个行业</aside></header>
+								<div class="lists-container">
 									<aside>
 										<ul class="candidates-list level1">
-											<li><a href="#">江西</a></li>
+											<li><span>餐饮</span><i></i>
+												<ul class="candidates-list level2">
+													<li><span>火锅</span><i></i></li>
+													<li><span>麻辣香锅</span><i></i></li>
+													<li><span>米粉</span><i></i></li>
+													<li><span>炒菜</span><i></i></li>
+													<li><span>水煮鱼</span><i></i></li>													
+												</ul>	
+											</li>
+											<li><span>娱乐</span><i></i></li>
+											<li><span>文化</span><i></i></li>
+											<li><span>科技</span><i></i></li>
+											<li class="no-sub-menu"><span>没有子菜单</span><i></i></li>
+											<li><span>色情</span><i></i></li>
 										</ul>										
 									</aside>
 
 									<aside>
-										<ul class="tags-list">
-											<li><a href="#">健身中心</a></li>
-											<li><a href="#">咖啡厅</a></li>
+										<ul class="selected-items-list">
+											<li class="level1">科技<i></i></li>
+											<li class="level2">健身中心<i></i></li>
+											<li class="level2">咖啡厅<i></i></li>
 										</ul>
 									</aside>
 								</div>
@@ -197,5 +241,32 @@
 	</div>
 </div>
 
+<script id="script-temp-for-testing">
+	// if (0) {
+	// 	var $elementsToHide = $('.row:not(.no-hover)')
+	// 		.add('hr')
+	// 		.add('.page-wrap > header')
+	// 		.add('body > header');
+
+	// 	$elementsToHide.hide();
+
+	// 	$('.chief-content').css('margin-top', '0px');
+	// }
+
+	var redirectCheckbox = document.querySelector('#redirect');
+	var $redirectItemsSelectorRoot = $('#redirect-items-selector-root');
+
+	$(redirectCheckbox).on('change', function (e) {
+		console.log($redirectItemsSelectorRoot[0]);
+		if (this.checked) {
+			$redirectItemsSelectorRoot.slideDown();
+		} else {
+			$redirectItemsSelectorRoot.slideUp();
+		}
+	});
+
+	$redirectItemsSelectorRoot.hide();
+	redirectCheckbox.checked = false;
+</script>
 </body>
 </html>
