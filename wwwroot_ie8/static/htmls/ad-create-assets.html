@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="page-ad-create-assets">
+<head>
+	<meta charset="utf-8">
+	<title>创建素材 - 点合广告平台</title>
+	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
+	<script src="../scripts/jquery-1.11.1.min.js"></script>
+	<style>
+		.file-path-readonly-input {
+			width: 480px;
+		}
+	</style>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<div class="aside"></div old-tag-name="aside">
+<script id="script-loading-html-snippets-0">
+	$(document.body.querySelector('.header')).load('snippets/header-default.html');
+	$(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+	$(document.body.querySelector('.aside')).load('snippets/sidebar-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header">
+			<h1>创建素材</h1>
+			<div class="aside left"></div old-tag-name="aside">
+			<div class="aside right"></div old-tag-name="aside">
+		</div old-tag-name="header">
+
+		<div class="section">
+			<div class="section-body">
+				<form id="some-form-untitled">
+
+					<div class="row required">
+						<div class="aside"><label for="ad-assets-title">素材名称</label></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="text" name="ad-assets-title" id="ad-assets-title" placeholder="请输入素材名称" value="" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="ad-assets-file-format">素材格式</label></div old-tag-name="aside">
+						<div class="aside">
+							<select required id="ad-assets-file-format">
+								<option value="null">- 请选择 -</option>
+								<option value="jpg">jpg</option>
+								<option value="png">png</option>
+								<option value="tif">tif</option>
+								<option value="webp">webp</option>
+								<option value="flv">flv</option>
+								<option value="mp4">mp4</option>
+								<option value="webm">webm</option>
+								<option value="swf">swf</option>
+							</select>
+						</div old-tag-name="aside">
+					</div>
+
+					<hr/>
+
+					<div class="row required">
+						<div class="aside"><label for="ad-assets-file-format">素材尺寸 1</label></div old-tag-name="aside">
+						<div class="aside">
+							<select required id="ad-assets-file-format">
+								<option value="null">- 请选择 -</option>
+								<option value="640_480">640 x 480</option>
+								<option value="320_240">320 x 240</option>
+							</select><br/>
+
+							<button class="narrow snap-right">从本地上传素材1</button>
+							<input readonly disabled type="text" name="ad-asset-1-path" id="ad-asset-1-path" value="素材文件尚未指定" class="file-path-readonly-input" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="ad-assets-file-format">素材尺寸 2</label></div old-tag-name="aside">
+						<div class="aside">
+							<select required id="ad-assets-file-format">
+								<option value="null">- 请选择 -</option>
+								<option value="320_240">320 x 240</option>
+								<option value="111_222">111 x 222</option>
+							</select><br/>
+
+							<button class="narrow snap-right">从本地上传素材2</button>
+							<input readonly disabled type="text" name="ad-asset-2-path" id="ad-asset-2-path" value="素材文件尚未指定" class="file-path-readonly-input" />
+						</div old-tag-name="aside">
+					</div>
+
+					<hr class="spacer" />
+
+					<div class="row">
+						<div class="aside"><label for="recharge-desc">素材描述</label></div old-tag-name="aside">
+						<div class="aside">
+							<textarea id="recharge-desc" maxlength="1500" placeholder="请填写素材描述。限1500字。"></textarea>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row buttons-section">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<button>上传</button>
+						</div old-tag-name="aside">
+					</div>
+
+				</form>
+			</div>
+		</div old-tag-name="section">
+	</div>
+</div>
+
+</body>
+</html>

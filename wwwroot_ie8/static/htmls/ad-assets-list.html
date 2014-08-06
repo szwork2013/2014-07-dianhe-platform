@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="page-name-goes-here">
+<head>
+	<meta charset="utf-8">
+	<title>我的素材 - 点合广告平台</title>
+	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/popup-windows.css"/>
+	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
+	<script src="../scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<div class="aside"></div old-tag-name="aside">
+<script id="script-loading-html-snippets-0">
+	$(document.body.querySelector('.header')).load('snippets/header-default.html');
+	$(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+	$(document.body.querySelector('.aside')).load('snippets/sidebar-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header"><h1>我的素材</h1></div old-tag-name="header">
+
+		<div class="section single-line-info-bar">
+			<div style="width: 33%;" class="aside left"				><i>有效素材</i  ><em class="ok">13</em><i>个</i></div old-tag-name="aside">
+			<div style="width: 34%;" class="aside left center-text" ><i>待审核素材</i><em class="cool">21</em><i>个</i></div old-tag-name="aside">
+			<div style="width: 33%;" class="aside left right-text"	><i>审核失败</i  ><em class="hot">8</em><i>个</i></div old-tag-name="aside">
+		</div old-tag-name="section">
+
+		<div class="section">
+			
+			<div class="header large"><button id="button-create-ad" onclick="location.assign('ad-create-assets.html');">新建素材</button></div old-tag-name="header"> 
+
+			<div class="section-body">
+				<table class="data-sheet ad-assets-management">
+					<thead>
+						<tr>
+							<th class="asset-name">素材名称</th>
+							<th class="asset-status">状态</th>
+							<th class="asset-op">操作</th>
+							<th class="asset-format">格式</th>
+							<th class="asset-dimensions">尺寸</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td>有效</td>
+							<td><a href="#">存档</a></td>
+							<td>jpg</td>
+							<td>320 * 50</td>
+						</tr>
+
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td>有效</td>
+							<td><a href="#">存档</a></td>
+							<td>jpg</td>
+							<td>320 * 50</td>
+						</tr>
+
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td>有效</td>
+							<td><a href="#">存档</a></td>
+							<td>jpg</td>
+							<td>320 * 50</td>
+						</tr>
+
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td><a href="#" class="failure">审核失败</a></td>
+							<td><a href="#">存档</a></td>
+							<td>jpg</td>
+							<td>320 * 50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div old-tag-name="section">
+	</div>
+</div>
+
+<div id="all-popup-windows-container">
+	<div class="popup-window" id="popwin-ad-assets-info">
+		<i class="button button-x"></i>
+
+		<div class="header">
+			<h2>广告素材状态信息</h2>
+		</div old-tag-name="header">
+
+		<div class="article">
+			<ul class="labelled-list ad-assets-status-list">
+				<li>一张图片</li>
+				<li><time class="date">2014-07-22</time></li>
+				<li><time class="date">2014-08-01</time><time class="clock">11:22</time></li>
+				<li>违法广告法</li>
+			</ul>
+		</div old-tag-name="article">
+
+		<div class="footer">
+			<button class="button button-confirm button-close"></button>
+		</div old-tag-name="footer">
+	</div>
+</div>
+
+<script src="../scripts/lly-js.js"></script>
+<script src="../scripts/lly-website.js"></script>
+<script id="script-popup-windows">
+	var tempData1 = new Date('2014-07-22').toLocaleDateString();
+	var tempData2 = new Date('2014-08-03 12:34').toLocaleDateString();
+	var tempJsonData = {
+		assetName: '又有一个没通过审核的素材',
+		submitDate: tempData1,
+		auditDate: tempData2,
+		auditClock: new Date('2014-08-03 12:34').toLocaleTimeString(),
+		rejectedReason: '违法广告法'
+	}
+
+	var popwinAdAssetsStatus = website.popupWindowsService.createWindow( document.querySelector('#popwin-ad-assets-info') );
+		popwinAdAssetsStatus.addShowButtons( document.querySelector('.failure') );
+		popwinAdAssetsStatus.onshow = function () {
+			// l(this.rootElement);
+			var items = this.rootElement.querySelectorAll('.ad-assets-status-list li');
+			items[0].innerHTML = tempJsonData.assetName;
+			items[1].innerHTML = '<time class="date">'+tempJsonData.submitDate+'</time>';
+			items[2].innerHTML = '<time class="date">'+tempJsonData.auditDate+'</time><time class="clock">'+tempJsonData.auditClock+'</time>';
+			items[3].innerHTML = tempJsonData.rejectedReason;
+		}
+</script>
+
+</body>
+</html>

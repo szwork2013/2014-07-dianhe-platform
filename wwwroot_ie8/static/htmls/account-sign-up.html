@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="page-account-sign-up">
+<head>
+	<meta charset="utf-8">
+	<title>注册账户 - 点合广告平台</title>
+	<link rel="stylesheet" href="../stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="../stylesheets/theme-default.css"/>
+	<script src="../scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<div class="aside"></div old-tag-name="aside">
+<script id="script-loading-html-snippets-0">
+	$(document.body.querySelector('.header')).load('snippets/header-default.html');
+	$(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+	$(document.body.querySelector('.aside')).load('snippets/sidebar-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header"><h1>欢迎您注册点合广告平台</h1></div old-tag-name="header">
+
+		<section id="tab-basic-info">
+			<div class="header"><h3>基本信息</h3></div old-tag-name="header">
+
+			<div class="section-body">
+				<form id="some-form-untitled">
+
+					<div class="row required">
+						<div class="aside"><label for="account-username">用户名</label></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="text" name="account-username" id="account-username" value="" />
+							<label for="account-username">用于账户登录</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="account-email">电子邮箱</label></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="email" name="account-email" id="account-email" value="" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="password-0">新密码</label></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="password" name="password-0" id="password-0" value="" />
+							<label for="password-0">密码长度6-16字符，限数字和字母，字母区分大小写。</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="password-1">重复密码</label></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="password" name="password-1" id="password-1" value="" />
+							<label for="password-1">请再次输入密码。</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label for="account-phone">联系电话</label></div old-tag-name="aside">
+						<div class="aside">
+							<input type="tel" name="account-phone" id="account-phone" value="" />
+						</div old-tag-name="aside">
+					</div>
+
+					<hr/>
+
+					<div class="row required no-hover">
+						<div class="aside"><label for="verifier">验证码</label></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="text" name="verifier" id="verifier" value="" class="narrow" placeholder="请照抄右侧验证码" />
+							<img class="verifier-sample" src="../images/_temp/default-verifier-sample.png" />
+							<label><a href="#">看不清，换一张图。</a></label>
+							<p class="desc">请输入上图中的字符，字母不区分大小写。</p>
+						</div old-tag-name="aside">
+					</div>
+
+					<hr/>
+
+					<div class="row required no-hover">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<input required type="checkbox" name="agreement" id="agreement" />
+							<label for="agreement">我已认真阅读并同意平台<a href="#">《服务条款》</a>和<a href="#">《隐私申明》</a>。</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row buttons-section">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<button>保存</button>
+						</div old-tag-name="aside">
+					</div>
+
+				</form>
+			</div>
+		</div old-tag-name="section">
+	</div>
+</div>
+
+</body>
+</html>
