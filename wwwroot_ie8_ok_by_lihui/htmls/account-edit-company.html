@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="page-account-edit">
+<head>
+    <meta charset="utf-8">
+    <title>我的账号 - 点合广告平台</title>
+    <link rel="stylesheet" href="/stylesheets/chief-layout.css" />
+    <link rel="stylesheet" href="/stylesheets/theme-default.css" />
+    <script src="/scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="footer"></div>
+    <script id="script-loading-html-snippets-0">
+        $(document.body.querySelector('.header')).load('snippets/header-default.html', function () { nav('account'); });
+        $(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+    </script>
+
+    <div class="page-strip chief-content">
+        <div class="page-wrap">
+            <div class="header">
+                <h1>我的账号</h1>
+                <div class="aside left"></div>
+                <div class="aside right">
+                    <div class="nav links-group horizontal has-dividers align-right">
+                        <ul>
+                            <li class="current">公司信息<a href="account-edit-company.html"></a></li>
+                            <li>账号信息<a href="account-edit.html"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section" id="tab-company-info">
+                <div class="header"><h3>公司信息</h3></div>
+
+                <div class="section-body">
+                    <form id="some-form-untitled2">
+
+                        <div class="row required">
+                            <div class="aside"><label for="company-caption">公司名称</label></div>
+                            <div class="aside">
+                                <input class="required" type="text" name="company-caption" id="company-caption" value="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="aside"><label for="company-person">公司联系人</label></div>
+                            <div class="aside">
+                                <input type="text" name="company-person" id="company-person" value="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="aside"><label for="company-phone">公司电话</label></div>
+                            <div class="aside">
+                                <input type="tel" name="company-phone" id="company-phone" value="" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="aside"><label for="company-email">公司电子邮箱</label></div>
+                            <div class="aside">
+                                <input type="email" name="company-email" id="company-email" value="" />
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="aside"><label>所在城市</label></div>
+                            <div class="aside">
+                                <select name="location-level-0" id="location-level-0" class="narrow">
+                                    <option>北京</option>
+                                    <option>上海</option>
+                                    <option>天津</option>
+                                    <option>重庆</option>
+                                    <option>江西</option>
+                                </select>
+                                <label for="location-level-0">省/直辖市/自治区</label>
+                                <br />
+                                <select  name="location-level-1" id="location-level-1">
+                                    <option>- 请先选择（省/直辖市/自治区） -</option>
+                                </select>
+                                <label for="location-level-1">市/县</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="aside"><label for="company-address">公司地址</label></div>
+                            <div class="aside">
+                                <input type="text" name="company-address" id="company-address" value="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="aside"><label for="company-zipcode">公司邮编</label></div>
+                            <div class="aside">
+                                <input type="text" name="company-zipcode" id="company-zipcode" value="" />
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="aside"><label>营业执照照片</label></div>
+                            <div class="aside">
+                                <button class="narrow snap-right">从本地上传图片</button>
+                                <input readonly disabled type="text" name="license-picture-0" id="license-picture-0" value="图片文件尚未指定" class="file-path-readonly-input" />
+                                <input type="file" name="fileField-3" class="file" id="fileField-3" size="28" onchange="document.getElementById('license-picture-0').value=this.value" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="aside"><label>税务登记证照片</label></div>
+                            <div class="aside">
+                                <button class="narrow snap-right">从本地上传图片</button>
+                                <input readonly disabled type="text" name="license-picture-1" id="license-picture-1" value="图片文件尚未指定" class="file-path-readonly-input" />
+                                <input type="file" name="fileField-4" class="file" id="fileField-4" size="28" onchange="document.getElementById('license-picture-1').value=this.value" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="aside"><label>组织机构代码证照片</label></div>
+                            <div class="aside">
+                                <button class="narrow snap-right">从本地上传图片</button>
+                                <input readonly disabled type="text" name="license-picture-2" id="license-picture-2" value="图片文件尚未指定" class="file-path-readonly-input" />
+                                <input type="file" name="fileField-5" class="file" id="fileField-5" size="28" onchange="document.getElementById('license-picture-2').value=this.value" />
+                            </div>
+                        </div>
+
+                        <div class="row buttons-section">
+                            <div class="aside"></div>
+                            <div class="aside">
+                                <button>上传并保存</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="page-account-details">
+<head>
+	<meta charset="utf-8">
+	<title>账户明细 - 点合广告平台</title>
+	<link rel="stylesheet" href="/stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="/stylesheets/theme-default.css"/>
+	<script src="/scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<script id="script-loading-html-snippets-0">
+    $(document.body.querySelector('.header')).load('snippets/header-default.html', function () { nav('account'); });
+    $(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+</script>
+    
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header">
+			<h1>我的账号</h1>
+
+			<div class="aside left"></div old-tag-name="aside">
+
+			<div class="aside right">
+				<div class="nav links-group horizontal has-dividers align-right">
+					<ul>
+						<!--<li 							>财务信息<a href="#"></a></li>
+						<li class="current high-light"	>账户明细<a href="#"></a></li>-->
+                        <li class="current high-light">充值<a href="#"></a></li>
+					</ul>
+				</div>
+			</div old-tag-name="aside">
+		</div old-tag-name="header">
+
+		<div class="section">
+			<div class="section-body">
+				<form id="some-form-untitled">
+
+					<div class="row no-hover">
+						<div class="aside"><label>账户余额</label></div old-tag-name="aside">
+						<div class="aside"><label>29元</label></div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="account-balance">充值余额</label></div old-tag-name="aside">
+						<div class="aside">
+							<input class="required" type="text" name="account-balance" id="account-balance" value="" /><label for="account-balance">元</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label for="send-me-receipt">发票</label></div old-tag-name="aside">
+						<div class="aside">
+							<input type="checkbox" name="send-me-receipt" id="send-me-receipt" value="" /><label for="send-me-receipt">需要</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row no-hover" id="receipt-table">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<fieldset>
+								<div class="row">
+									<div class="aside"><label>发票抬头</label></div old-tag-name="aside">
+									<div class="aside">
+										<!--<select id="receipt-type" style="width: 70px;">
+											<option>个人</option>
+											<option>单位</option>
+										</select>-->
+										<input type="text" name="receipt-title" id="receipt-title" placeholder="公司名称" value="" />
+									</div old-tag-name="aside">
+								</div>
+
+								<div class="row">
+									<div class="aside"><label for="post-address">邮寄地址</label></div old-tag-name="aside">
+									<div class="aside">
+										<input type="text" name="post-address" id="post-address" placeholder="邮寄地址" value="" />
+									</div old-tag-name="aside">
+								</div>
+
+								<div class="row">
+									<div class="aside"><label for="zip-code">邮编</label></div old-tag-name="aside">
+									<div class="aside">
+										<input type="text" name="zip-code" id="zip-code" placeholder="邮编" value="" />
+									</div old-tag-name="aside">
+								</div>
+
+								<div class="row">
+									<div class="aside"><label for="contact-person">联系人</label></div old-tag-name="aside">
+									<div class="aside">
+										<input type="text" name="contact-person" id="contact-person" placeholder="联系人" value="" />
+									</div old-tag-name="aside">
+								</div>
+
+								<div class="row">
+									<div class="aside"><label for="contact-person-phone">公司电话</label></div old-tag-name="aside">
+									<div class="aside">
+										<input type="text" name="contact-person-phone" id="contact-person-phone" placeholder="公司电话" value="" />
+									</div old-tag-name="aside">
+								</div>
+							</fieldset>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label for="recharge-desc">充值说明</label></div old-tag-name="aside">
+						<div class="aside">
+							<textarea id="recharge-desc" maxlength="1500" placeholder="请填写充值说明。限1500字。"></textarea>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row buttons-section">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<button>提交</button>
+						</div old-tag-name="aside">
+					</div>
+
+				</form>
+			</div>
+		</div old-tag-name="section">
+	</div>
+</div>
+
+<script id="script-temp-for-testing">
+	var receiptCheckbox = document.querySelector('#send-me-receipt');
+	var $receiptTable = $('#receipt-table');
+
+	$(receiptCheckbox).on('change', function (e) {
+		console.log($receiptTable[0]);
+		if (this.checked) {
+			$receiptTable.slideDown();
+		} else {
+			$receiptTable.slideUp();
+		}
+	});
+
+	$receiptTable.hide();
+	receiptCheckbox.checked = false;
+</script>
+</body>
+</html>

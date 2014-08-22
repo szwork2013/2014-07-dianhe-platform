@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="page-ad-create-activity">
+<head>
+	<meta charset="utf-8">
+	<title>创建广告活动 - 点合广告平台</title>
+	<link rel="stylesheet" href="/stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="/stylesheets/theme-default.css"/>
+    <script language="javascript" type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+	<script src="/scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<script id="script-loading-html-snippets-0">
+    $(document.body.querySelector('.header')).load('snippets/header-default.html', function () { nav('ad'); });
+	$(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header">
+			<h1>创建广告活动</h1>
+			<div class="aside left"></div old-tag-name="aside">
+			<div class="aside right"></div old-tag-name="aside">
+		</div old-tag-name="header">
+
+		<div class="section">
+			<div class="section-body">
+				<form id="some-form-untitled">
+
+					<div class="row required">
+						<div class="aside"><label for="ad-activity-title">活动名称</label></div old-tag-name="aside">
+						<div class="aside">
+							<input class="required" type="text" name="ad-activity-title" id="ad-activity-title" placeholder="输入广告名称" value="" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="ad-activity-start-time">活动开始时间</label></div old-tag-name="aside">
+						<div class="aside">
+                            <input class="required Wdate" type="text" name="ad-activity-start-time" id="ad-activity-start-time" onClick="WdatePicker()" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label for="ad-activity-end-time" >活动结束时间</label></div old-tag-name="aside">
+						<div class="aside">
+							<input class="Wdate" type="text" name="ad-activity-end-time" id="ad-activity-end-time" onClick="WdatePicker()" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="ad-activity-budgets" >活动预算</label></div old-tag-name="aside">
+						<div class="aside">
+                            <input class="required" type="text" name="ad-activity-budgets" id="ad-activity-budgets" value="" /><label for="ad-activity-budgets">元</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label for="recharge-desc" >广告说明</label></div old-tag-name="aside">
+						<div class="aside">
+							<textarea id="recharge-desc" maxlength="1500" placeholder="请填写广告说明。限1500字。"></textarea>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row buttons-section no-hover">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<button>保存</button>
+						</div old-tag-name="aside">
+					</div>
+
+				</form>
+			</div>
+		</div old-tag-name="section">
+	</div>
+</div>
+
+</body>
+</html>

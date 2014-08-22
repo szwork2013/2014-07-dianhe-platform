@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="page-account-edit">
+<head>
+	<meta charset="utf-8">
+	<title>创建广告 - 点合广告平台</title>
+	<link rel="stylesheet" href="/stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="/stylesheets/items-selector.css"/>
+	<link rel="stylesheet" href="/stylesheets/theme-default.css"/>
+    <script language="javascript" type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+	<script src="/scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<script id="script-loading-html-snippets-0">
+    $(document.body.querySelector('.header')).load('snippets/header-default.html', function () { nav('ad'); });
+	$(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header"><h1>创建广告</h1></div old-tag-name="header">
+
+		<div class="section" id="tab-basic-info">
+			<div class="section-body">
+				<form id="some-form-untitled">
+
+					<div class="row required">
+						<div class="aside"><label for="ad-caption" >广告名称</label></div old-tag-name="aside">
+						<div class="aside">
+                            <input class="required" type="email" name="ad-caption" id="ad-caption" value="" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="associated-activity">所属活动</label></div old-tag-name="aside">
+						<div class="aside">
+                            <input class="required" type="tel" name="associated-activity" id="associated-activity" value="" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label for="ad-start-time"  >广告开始时间</label></div old-tag-name="aside">
+						<div class="aside">
+                            <input class="required Wdate" type="text" name="ad-start-time" id="ad-start-time"  onClick="WdatePicker()" />
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label for="ad-end-time"  >广告结束时间</label></div old-tag-name="aside">
+						<div class="aside">
+							<input class="Wdate" type="text" name="ad-end-time" id="ad-end-time" onClick="WdatePicker()" />
+						</div old-tag-name="aside">
+					</div>
+
+					<hr/>
+
+					<div class="row">
+						<div class="aside"><label class ="aside-label">计费方式</label></div old-tag-name="aside">
+						<div class="aside">
+							<input type="radio" name="ad-fee-type" id="ad-fee-type-cpm" value="cpm" checked /><label for="ad-fee-type-cpm">CPM</label>
+							<input type="radio" name="ad-fee-type" id="ad-fee-type-cpd" value="cpd" 		/><label for="ad-fee-type-cpd">CPD</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label  >日预算</label></div old-tag-name="aside">
+						<div class="aside">
+							<input type="text" name="ad-budgets-daily" id="ad-budgets-daily-cpd" value="" /><label for="ad-budgets-daily-cpd">元</label><br/>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row">
+						<div class="aside"><label  >出价CPM</label></div old-tag-name="aside">
+						<div class="aside">
+							<input type="text" name="ad-budgets-daily" id="ad-budgets-daily-cpm" value="" /><label for="ad-budgets-daily-cpm">元</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<hr/>
+
+					<div class="row required">
+						<div class="aside"><label  >绑定素材</label></div old-tag-name="aside">
+						<div class="aside">
+                            <select class="required" name="bound-asset" id="bound-asset">
+                                <option>素材1</option>
+                                <option>素材2</option>
+                                <option>素材3</option>
+                                <option>素材4</option>
+                            </select>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row required">
+						<div class="aside"><label  >绑定广告位</label></div old-tag-name="aside">
+						<div class="aside">
+                            <select class="required" name="bound-ad-socket" id="bound-ad-socket">
+                                <option>广告位1</option>
+                                <option>广告位2</option>
+                                <option>广告位3</option>
+                                <option>广告位4</option>
+                            </select>
+						</div old-tag-name="aside">
+					</div>
+                    <div class="row required">
+						<div class="aside"><label  >广告展示方式</label></div old-tag-name="aside">
+						<div class="aside">
+                            <select class="required" name="bound-ad-socket" id="bound-ad">
+                                <option>方式1</option>
+                                <option>方式2</option>
+                                <option>方式3</option>
+                                <option>方式4</option>
+                            </select>
+						</div old-tag-name="aside">
+					</div>
+
+					<hr/>
+
+					<div class="row">
+						<div class="aside"><label for="ad-desc"  >广告说明</label></div old-tag-name="aside">
+						<div class="aside">
+							<textarea id="ad-desc" maxlength="1500" placeholder="请填写广告说明。限1500字。"></textarea>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row no-hover">
+						<div class="aside aside-label"></div old-tag-name="aside">
+						<div class="aside">
+							<input type="checkbox" name="redirect" id="redirect" /><label for="redirect">开启广告定向</label>
+						</div old-tag-name="aside">
+					</div>
+
+					<div class="row no-hover" id="redirect-items-selector-root">
+						<div class="aside"></div old-tag-name="aside">
+						<div class="aside">
+							<div class="items-selector">
+								<div class="header"><h3>城市定向</h3><div class="aside right">已选定<em class="hot">6</em>个城市</div old-tag-name="aside"></div old-tag-name="header">
+								<div class="lists-container">
+									<div class="aside first">
+										<ul class="candidates-list level1">
+											<li><span>北京</span><i></i></li>
+
+											<li><span>上海</span><i></i></li>
+
+											<li><span>天津</span><i></i></li>
+
+											<li><span>重庆</span><i></i></li>
+
+											<li><span>广东</span><i></i></li>
+
+											<li class="expanded"><span>江西省</span><i></i>
+												<ul class="candidates-list level2">
+													<li class="expanded"><span>南昌市</span><i></i>
+														<!-- <ul class="candidates-list level3">
+															<li><span>东湖区</span><i></i></li>
+															<li><span>西湖区</span><i></i></li>
+															<li><span>青山湖区</span><i></i></li>
+															<li><span>青云谱区</span><i></i></li>
+														</ul> -->
+													</li>
+													<li><span>九江市</span><i></i></li>
+													<li><span>赣州市</span><i></i></li>
+													<li><span>吉安市</span><i></i></li>
+												</ul>
+
+											<li class="expanded"><span>江苏省</span><i></i>
+												<ul class="candidates-list level2">
+													<li><span>南京</span><i></i></li>
+													<li><span>扬州</span><i></i></li>
+													<li><span>苏州</span><i></i></li>
+													<li><span>泰州</span><i></i></li>
+													<li><span>徐州</span><i></i></li>													
+												</ul>
+											</li>
+
+											<li class="expanded"><span>浙江省</span><i></i>
+												<ul class="candidates-list level2">
+													<li><span>杭州</span><i></i></li>
+													<li><span>宁波</span><i></i></li>
+												</ul>
+											</li>
+										</ul>
+									</div old-tag-name="aside">
+
+									<div class="aside second">
+										<ul class="selected-items-list">
+											<li class="level2">南昌市<i></i></li>
+											<!-- <li class="level3">东湖区<i></i></li> -->
+											<li class="level1">江苏<i></i></li>
+											<li class="level1">北京<i></i></li>
+											<!-- <li class="level3">泰安<i></i></li> -->
+											<li class="level1">呼伦贝尔<i></i></li>
+											<!-- <li class="level3">塔特拉玛干<i></i></li> -->
+											<li class="level2">徐汇区<i></i></li>
+											<li class="level1">上海市<i></i></li>
+										</ul>
+									</div old-tag-name="aside">
+								</div>
+							</div>
+
+							<div class="items-selector">
+								<div class="header"><h3>商户类型定向</h3><div class="aside right">已选定<em class="hot">3</em>个行业</div old-tag-name="aside"></div old-tag-name="header">
+								<div class="lists-container">
+									<div class="aside first">
+										<ul class="candidates-list level1">
+											<li><span>餐饮</span><i></i>
+												<ul class="candidates-list level2">
+													<li><span>火锅</span><i></i></li>
+													<li><span>麻辣香锅</span><i></i></li>
+													<li><span>米粉</span><i></i></li>
+													<li><span>炒菜</span><i></i></li>
+													<li><span>水煮鱼</span><i></i></li>													
+												</ul>	
+											</li>
+											<li><span>娱乐</span><i></i></li>
+											<li><span>文化</span><i></i></li>
+											<li><span>科技</span><i></i></li>
+											<li class="no-sub-menu"><span>没有子菜单</span><i></i></li>
+											<li><span>色情</span><i></i></li>
+										</ul>										
+									</div old-tag-name="aside">
+
+									<div class="aside second">
+										<ul class="selected-items-list">
+											<li class="level1">科技<i></i></li>
+											<li class="level2">健身中心<i></i></li>
+											<li class="level2">咖啡厅<i></i></li>
+										</ul>
+									</div old-tag-name="aside">
+								</div>
+							</div>
+						</div old-tag-name="aside">
+					</div>
+
+					<hr class="spacer" />
+
+					<div class="row buttons-section">
+                        <div class="aside aside-label"></div>
+						<div class="aside">
+							<button>保存</button>
+							<button class="green">提交审核</button>
+							<button class="red">废弃</button>
+						</div old-tag-name="aside">
+					</div>
+
+				</form>
+			</div>
+		</div old-tag-name="section">
+	</div>
+</div>
+
+<script id="script-temp-for-testing">
+	 if (0) {
+	 	var $elementsToHide = $('.row:not(.no-hover)')
+	 		.add('hr')
+	 		.add('.page-wrap > header')
+	 		.add('body > header');
+
+	 	$elementsToHide.hide();
+
+	 	$('.chief-content').css('margin-top', '0px');
+	 }
+
+	var redirectCheckbox = document.querySelector('#redirect');
+	var $redirectItemsSelectorRoot = $('#redirect-items-selector-root');
+
+	$(redirectCheckbox).on('change', function (e) {
+		console.log($redirectItemsSelectorRoot[0]);
+		if (this.checked) {
+			$redirectItemsSelectorRoot.slideDown();
+		} else {
+			$redirectItemsSelectorRoot.slideUp();
+		}
+	});
+
+	//$redirectItemsSelectorRoot.hide();
+	redirectCheckbox.checked = false;
+</script>
+</body>
+</html>

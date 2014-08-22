@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="page-name-goes-here">
+<head>
+	<meta charset="utf-8">
+	<title>我的广告 - 点合广告平台</title>
+	<link rel="stylesheet" href="/stylesheets/chief-layout.css"/>
+	<link rel="stylesheet" href="/stylesheets/popup-windows.css"/>
+	<link rel="stylesheet" href="/stylesheets/theme-default.css"/>
+	<script src="/scripts/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="header"></div old-tag-name="header">
+<div class="footer"></div old-tag-name="footer">
+<script id="script-loading-html-snippets-0">
+    $(document.body.querySelector('.header')).load('snippets/header-default.html', function () { nav('ad'); });
+	$(document.body.querySelector('.footer')).load('snippets/footer-default.html');
+</script>
+
+<div class="page-strip chief-content">
+	<div class="page-wrap">
+		<div class="header"><h1>我的广告</h1></div old-tag-name="header">
+
+		<div class="section single-line-info-bar">
+			<div style="width: 35%;" class="aside left"><i>当前活动</i><em class="cool">暑期大冒险</em></div old-tag-name="aside">
+            <div style="width: 25%;" class="aside left right-text"><i>活动预算</i><em class="hot">100.0</em><i>元</i></div>
+            <div style="width: 20%;" class="aside left right-text"><i>有效广告</i><em class="hot">6</em><i>个</i></div>
+            <div style="width: 20%;" class="aside left right-text"><i>审核失败</i><em class="hot">15</em><i>个</i></div>
+		</div old-tag-name="section">
+
+		<div class="section">
+			
+			<div class="header large"><button id="button-create-ad" onclick="location.assign('ad-create-ad.html');">创建广告</button></div old-tag-name="header"> 
+
+			<div class="section-body">
+				<table class="data-sheet ads-management">
+					<thead>
+						<tr>
+							<th class="ad-name">活动名称</th>
+							<th class="ad-status">广告状态</th>
+							<th class="ad-time-start">广告起始时间</th>
+							<th class="ad-dimensions">尺寸</th>
+							<th class="ad-budgets-daily">日预算（元）</th>
+							<th class="ad-cost-today">当日花费（元）</th>
+                            <th class="ad-op">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td>有效</td>
+							<td><time class="date">2014-01-01</time></td>
+							<td>320 * 50</td>
+							<td>1,666</td>
+							<td>5,43.21</td>
+                            <td><a href="#">暂停</a><a href="#">存档</a></td>
+						</tr>
+
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td>暂停</td>
+							<td><time class="date">2014-01-01</time></td>
+							<td>320 * 50</td>
+							<td>1,666</td>
+							<td>5,43.21</td>
+                            <td><a href="#">启动</a><a href="#">存档</a></td>
+						</tr>
+
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td>有效</td>
+							<td><time class="date">2014-01-01</time></td>
+							<td>320 * 50</td>
+							<td>1,666</td>
+							<td>5,43.21</td>
+                            <td><a href="#">暂停</a><a href="#">存档</a></td>
+						</tr>
+
+						<tr>
+							<td><a href="#">大众横幅广告</a></td>
+							<td><a href="#" class="failure">审核失败</a></td>
+							<td><time class="date">2014-01-01</time></td>
+							<td>320 * 50</td>
+							<td>1,666</td>
+							<td>5,43.21</td>
+                            <td><a href="#">暂停</a><a href="#">存档</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div old-tag-name="section">
+	</div>
+</div>
+
+<div class="seciton" id="all-popup-windows-container">
+	<div class="section popup-window" id="popwin-ad-info" style="width:450px;">
+		<i class="button button-x"></i>
+
+		<div class="header">
+			<h2>广告状态信息</h2>
+		</div old-tag-name="header">
+
+		<div class="article">
+			<ul class="labelled-list ad-status-list">
+				<li class="row-caption">一则广告</li>
+                <li class="row-time-submit"><time class="date">2014-01-01</time></li>
+                <li class="row-time-audit"><time class="date">2014-01-03</time><time class="clock">11:22</time></li>
+                <li class="row-reason">广告位资源冲突</li>
+			</ul>
+		</div old-tag-name="article">
+
+		<div class="footer">
+			<button class="button button-confirm button-close"></button>
+		</div old-tag-name="footer">
+	</div old-tag-name="section">
+</div old-tag-name="section">
+
+<script src="/scripts/lly-js.js"></script>
+<script src="/scripts/lly-website.js"></script>
+<script id="script-popup-windows">
+	var tempData1 = new Date('2014-07-22').toLocaleDateString();
+	var tempData2 = new Date('2014-08-03 12:34').toLocaleDateString();
+	var tempJsonData = {
+		assetName: '又有一则作废的广告',
+		submitDate: tempData1,
+		auditDate: tempData2,
+		auditClock: new Date('2014-08-03 12:34').toLocaleTimeString(),
+		rejectedReason: '广告位资源冲突'
+	}
+
+	var popwinAdStatus = website.popupWindowsService.createWindow(document.querySelector('#popwin-ad-info'), {
+        offsetY: 200
+	});
+		popwinAdStatus.addShowButtons( document.querySelector('.failure') );
+		popwinAdStatus.onshow = function () {
+			// l(this.rootElement);
+		    var items = this.rootElement.querySelectorAll('.ad-status-list li');
+		    this.rootElement.style.top = '200px';
+			items[0].innerHTML = tempJsonData.assetName;
+			items[1].innerHTML = '<time class="date">'+tempJsonData.submitDate+'</time>';
+			items[2].innerHTML = '<time class="date">'+tempJsonData.auditDate+'</time><time class="clock">'+tempJsonData.auditClock+'</time>';
+			items[3].innerHTML = tempJsonData.rejectedReason;
+		}
+</script>
+
+</body>
+</html>
